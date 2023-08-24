@@ -4,10 +4,10 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { usarUsuContext } from '../Context/UsuariosContexto';
 
-import svgNombreRegistro from '../../imagenes/username-icon.svg';
-import svgCorreoRegistro from '../../imagenes/email.svg';
-import svgContrasenaRegistro from '../../imagenes/password-icon.svg';
-import svgTelefonoRegistro from '../../imagenes/phone-icon.svg';
+import svgNombreRegistro from '../../images/username-icon.svg';
+import svgCorreoRegistro from '../../images/email.svg';
+import svgContrasenaRegistro from '../../images/password-icon.svg';
+import svgTelefonoRegistro from '../../images/phone-icon.svg';
 import './ModalRegistro.css'
 
 

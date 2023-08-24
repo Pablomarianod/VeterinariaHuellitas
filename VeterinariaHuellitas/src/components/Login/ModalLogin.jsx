@@ -3,10 +3,10 @@ import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { UsuarioContexto, usarUsuContext  } from '../Context/UsuariosContexto';
 import ModalRegistro from '../Registro/ModalRegistro';
-import gatoLogin from '../../imagenes/Gato-login.svg';
-import perroLoginn from '../../imagenes/Perro-img-login.svg';
-import imgUsuarioLogin from '../../imagenes/username-icon.svg'
-import imgContraseñaLogin from '../../imagenes/password-icon.svg'
+import gatoLogin from '../../images/Gato-login.svg';
+import perroLoginn from '../../images/Perro-img-login.svg';
+import imgUsuarioLogin from '../../images/username-icon.svg'
+import imgContraseñaLogin from '../../images/password-icon.svg'
 import './ModalLogin.css';
 
 

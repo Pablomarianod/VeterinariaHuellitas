@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { registerRequest, loginRequest  } from '../helpers/query.js';
+import { registerRequest, loginRequest  } from '../../helpers/query.js';
 /*import { useNavigate} from "react-router-dom";*/
 
 
