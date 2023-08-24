@@ -1,0 +1,132 @@
+.containerServicios {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+.containerDetalles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    
+}
+
+.informacionSimple {
+    flex: 1;
+    padding: 20;
+    text-align: center;
+    color: rgb(11, 176, 176);
+    margin-bottom: 30px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.informacionSimple img {
+    max-width: 200px;
+    height: auto;
+}
+
+.informacionSimple h1 {
+    font-size: 28px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.informacionSimple h3 {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #666;
+}
+
+
+#especialidades,
+#servicios {
+    flex: 1;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+.especialidad,
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.listaEspecialidades,
+.listaServicios {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 10px 0;
+ 
+}
+
+.listaEspecialidades li,
+.listaServicios li {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.listaEspecialidades li:before,
+.listaServicios li:before {
+    content: "🐾";
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.botonTurnos {
+    width: 70%;
+    background-color: #01ddf4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.botonTurnos:hover {
+
+    background-color: #0056b3;
+}
+
+.boton {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+
+@media (min-width: 769px) {
+    .containerServicios {
+        grid-template-columns: 1fr 1fr;
+    }
+    .containerDetalles {
+        width: 100%;
+        order: 2;
+        margin-top: 20px;
+        padding-right: 20px; /* Espaciado entre containerDetalles y los otros elementos */
+    }
+
+    .informacionSimple img {
+        max-width: 100%;
+    }
+}
