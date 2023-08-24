@@ -1,12 +1,12 @@
-import Formulario from "./components/formulario/Formulario";
-import FormularioContacto from "./pages/paginaContacto/FormularioContacto";
+import FormularioMascotas from "./components/formulario/FormularioMascotas"
+import PaginaContacto from "./pages/paginaContacto/PaginaContacto";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (
     <>
-        <Formulario/>
-        <FormularioContacto/>
+        <FormularioMascotas/>
+        <PaginaContacto/>
     </>
   );
 };
