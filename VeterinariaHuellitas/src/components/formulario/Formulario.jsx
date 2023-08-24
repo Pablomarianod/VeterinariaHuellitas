@@ -20,16 +20,6 @@ function Formulario() {
     });
   };
 
-  const handleResetForm = () => {
-    setInfoDueño({
-      nombreMascota: "",
-      especieMascota: "",
-      tipoDeRaza: "",
-      sexoMascota: "",
-      edadMascota: "",
-    });
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
@@ -44,7 +34,12 @@ function Formulario() {
     } else {
       alert("Los datos se enviaron correctamente.");
       console.log("Información de la mascota:", infoMascota);
-      handleResetForm();
+      setFormData({
+        nombreApellido: "",
+        email: "",
+        telefono: "",
+        mensaje: "",
+      });
     }
   };
 
@@ -52,7 +47,7 @@ function Formulario() {
     <Container className="mt-5">
       <Row className="justify-content-center">
         <Col md={8}>
-          <div className="border rounded p-4">
+          <div className="border rounded p-4 formulario">
             <h1 className="text-center">Información de la Mascota</h1>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="nombreMascota">

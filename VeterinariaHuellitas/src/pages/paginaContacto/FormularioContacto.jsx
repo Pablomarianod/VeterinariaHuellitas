@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import "./FormularioContacto.css"
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import "./FormularioContacto.css";
 
 function formularioContacto() {
   const [formData, setFormData] = useState({
-    nombreApellido: '',
-    email: '',
-    telefono: '',
-    mensaje: '',
+    nombreApellido: "",
+    email: "",
+    telefono: "",
+    mensaje: "",
   });
 
   const handleInputChange = (event) => {
@@ -22,20 +22,20 @@ function formularioContacto() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
-      formData.nombreApellido.trim() === '' ||
+      formData.nombreApellido.trim() === "" ||
       !formData.email.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/) ||
       !formData.telefono.match(/^\d{10}$/) ||
-      formData.mensaje.trim() === ''
+      formData.mensaje.trim() === ""
     ) {
-      alert('Por favor, complete todos los campos correctamente.');
+      alert("Por favor, complete todos los campos correctamente.");
     } else {
-      alert('El formulario se ha enviado correctamente.');
-      console.log('Datos del formulario:', formData);
+      alert("El formulario se ha enviado correctamente.");
+      console.log("Datos del formulario:", formData);
       setFormData({
-        nombreApellido: '',
-        email: '',
-        telefono: '',
-        mensaje: '',
+        nombreApellido: "",
+        email: "",
+        telefono: "",
+        mensaje: "",
       });
     }
   };
@@ -44,7 +44,7 @@ function formularioContacto() {
     <Container className="mt-5">
       <Row className="justify-content-center">
         <Col md={8}>
-          <div className="border rounded p-4">
+          <div className="border rounded p-4 formularioContacto">
             <h1 className="text-center">Contactanos!</h1>
             <p className="text-center">
               Responderemos con mucho gusto a todas tus preguntas. No obstante,
