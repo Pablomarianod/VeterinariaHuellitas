@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {Modal} from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-import { usarUsuContext } from '../../Context/UsuariosContexto';
+import { usarUsuContext } from '../Context/UsuariosContexto';
 
 import svgNombreRegistro from '../../imagenes/username-icon.svg';
 import svgCorreoRegistro from '../../imagenes/email.svg';
@@ -34,12 +34,10 @@ const ModalRegistro = ({show, handleClose}) =>{
   
   const onSubmit = handleSubmit( async (values) => {
     registrar(values);
-    setDatosUsuario({nombre: "", apellido: "", correo: "", contrasena: "", telefono: "", rol: "usuario"})
-    /*
+    setDatosUsuario({nombre: "", apellido: "", correo: "", contrasena: "", telefono: "", rol: "usuario"}) 
     reset();
     handleCloseRegistro();
-    Swal.fire('Su usuario se creo exitosamente', ':)', 'success');
-    */
+    Swal.fire('Su usuario se creo exitosamente', ':)', 'success');    
   })
 
   return(
