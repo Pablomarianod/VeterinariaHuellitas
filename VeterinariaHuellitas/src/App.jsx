@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import Error404 from './pages/Error404/Error404'
+import Sobrenosotros from './pages/sobrenosotros/Sobrenosotros'
+
 
 
 
@@ -9,7 +10,7 @@ const App = () => {
 
   return (
     <>
-     <Error404/>
+     <Sobrenosotros/>
     </>
   )
 }
