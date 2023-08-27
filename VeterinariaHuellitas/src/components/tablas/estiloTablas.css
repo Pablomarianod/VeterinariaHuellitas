@@ -1,0 +1,66 @@
+.tabla-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa el 100% del alto de la pantalla */
+    padding: 20px;
+  }
+  
+  
+  .tablaAdmin {
+    font-size: medium;
+    margin-top: 10px;
+    width: 80%; /* Ocupa el 80% del ancho disponible */
+    max-width: 800px; /* Límite máximo de ancho */
+    margin: 0 auto; 
+   
+  }
+  
+  .tablaAdmin th,
+  .tablaAdmin td {
+    padding: 10px;
+  }
+  
+  .tablaAdmin .filaAdmin th {
+    background-color: #333;
+    color: white;
+  }
+  
+  .tablaAdmin .columnaAdmin {
+    background-color: #f8f9fa;
+    transition: background-color 0.3s;
+  }
+  
+  .tablaAdmin .columnaAdmin:hover {
+    background-color: #e9ecef;
+  }
+  
+  .botonEditarAdmin,
+  .botonEliminarAdmin {
+    border: none;
+    transition: 0.3s;
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .botonEditarAdmin {
+    background-color: #0b91de;
+    color: white;
+    margin-bottom: 5px;
+  }
+  
+  .botonEditarAdmin:hover {
+    background-color: #0974b2;
+  }
+  
+  .botonEliminarAdmin {
+    background-color: #c80b0b;
+    color: white;
+  }
+  
+  .botonEliminarAdmin:hover {
+    background-color: #ae0909;
+  }
+  

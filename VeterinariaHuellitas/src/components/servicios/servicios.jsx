@@ -1,11 +1,11 @@
-import Clima from "../clima/Clima";
 import "./servicios.css";
+import Clima from "../clima/Clima";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
-// import { Modal } from "react-bootstrap";
-// import ModalTurnos from "../turnos/ModalTurnos";
-// import gatoLogin from "../../images/login/Gato-login.svg";
-// import perroLoginn from "../../images/login//Perro-img-login.svg";
+import { Modal } from "react-bootstrap";
+import ModalTurnos from "../turnos/ModalTurnos";
+import gatoLogin from "../../images/login/Gato-login.svg";
+import perroLoginn from "../../images/login//Perro-img-login.svg";
 
 const Servicios = () => {
 
@@ -61,7 +61,7 @@ const Servicios = () => {
           </section>
         </div>
       </div>
-      {/* <Modal centered size="md" show={show} onHide={handleClose}>
+      <Modal centered size="md" show={show} onHide={handleClose}>
         <div className="contenedorModalTurnos">
           <Modal.Header
             className="headerModalTurnos border-bottom-0"
@@ -89,7 +89,7 @@ const Servicios = () => {
             <ModalTurnos handleClose={handleClose} />
           </Modal.Body>
         </div>
-      </Modal> */}
+      </Modal>
     </>
   );
 };

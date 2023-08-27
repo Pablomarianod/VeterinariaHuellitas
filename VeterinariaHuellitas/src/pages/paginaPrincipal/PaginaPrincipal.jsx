@@ -5,6 +5,7 @@ import Profesionales from "../../components/profesionales/Profesionales"
 import Planes from "../../components/planes/Planes"
 // import Productos from "../../components/productos/Productos";
 import Slider from "../../components/slider/slider";
+
 // import { useContext } from "react";
 // import { ProductosContexto } from "../../components/context/ProductosContext";
 
@@ -27,6 +28,7 @@ const PaginaPrincipal = () => {
       <Planes />
       {/* <Productos /> */}
       <Slider />
+      
     </>
   )
 }

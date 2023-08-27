@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Rutas from './components/rutas/Rutas';
+import Rutas from './components/rutas/Rutas';
 // import ProductosContexto from './components/context/ProductosContext';
 // import ContextoTurnos from './components/context/TurnosContext';
 // import ContextoMascotas from './components/context/MascotasContext';
@@ -13,9 +13,9 @@ const App = () => {
 
   return (
     <>
-    <PaginaPrincipal />
+      <PaginaPrincipal />
 
-      {/* <Rutas /> */}
+      <Rutas />
 
     </>
   )

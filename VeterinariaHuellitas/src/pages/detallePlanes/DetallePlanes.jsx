@@ -1,5 +1,5 @@
 import { Button, Modal } from "react-bootstrap";
-import imagenConclusion from "../../images/mujerconperro2.jpg";
+import imagenConclusion from "../../images/planes/mujerconperro2.jpg";
 import "./DetallePlanes.css";
 import { useState } from "react";
 import ModalFormPlanes from "../../components/planes/ModalFormPlanes";
