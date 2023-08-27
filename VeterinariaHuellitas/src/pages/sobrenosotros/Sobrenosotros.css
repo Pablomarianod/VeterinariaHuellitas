@@ -29,7 +29,7 @@ h1 {
 }
 
 .cambiocolor:hover {
-    background: rgba(11, 103, 123, 0.6);
+    background: #01DDF4;
     transition: all 500ms ease-out;
     transform: translatey(-1%);
 
@@ -68,7 +68,7 @@ h2 {
   }
   
   .card:hover {
-    background: rgba(11, 103, 123, 0.6);
+    background: #01DDF4;
     transform: translateY(-1%);
   }
   
