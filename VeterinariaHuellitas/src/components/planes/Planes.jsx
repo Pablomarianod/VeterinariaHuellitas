@@ -27,7 +27,7 @@ function Planes() {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-      <Button className='botonPlanes' variant="primary" size="lg"> Ver Planes </Button>
+      <Button className='botonPlanes' href='' variant="primary" size="lg"> Ver Planes </Button>
     </div>
   );
 }
