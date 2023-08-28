@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./FormularioMascotas.css";
+import Swal from "sweetalert2";
 
 function Formulario() {
   const [infoMascota, setMascotaInfo] = useState({
@@ -20,6 +21,8 @@ function Formulario() {
     });
   };
 
+  const [aceptoTerminos, setAceptoTerminos] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
@@ -30,9 +33,17 @@ function Formulario() {
       !Number.isInteger(parseInt(infoMascota.edadMascota)) ||
       parseInt(infoMascota.edadMascota) <= 0
     ) {
-      alert("Porfavor, complete los datos solicitados.");
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Por favor, acepta los términos antes de enviar el formulario.",
+      });
     } else {
-      alert("Los datos se enviaron correctamente.");
+      Swal.fire({
+        icon: "success",
+        title: "Éxito!",
+        text: "Los datos se enviaron correctamente.",
+      });
       console.log("Información de la mascota:", infoMascota);
       setFormData({
         nombreApellido: "",
@@ -45,6 +56,9 @@ function Formulario() {
 
   return (
     <Container className="mt-5">
+      <Container>
+        <div className="atencion-container">Atención las 24hs del día</div>
+      </Container>
       <Row className="justify-content-center">
         <Col md={8}>
           <div className="border rounded p-4 formulario">
@@ -106,9 +120,22 @@ function Formulario() {
                   onChange={handleMascotaInputChange}
                   required
                 />
+                <Form.Group controlId="aceptoTerminos">
+                  <Form.Check
+                    type="checkbox"
+                    label="He leido y aceptado todos los términos"
+                    checked={aceptoTerminos}
+                    onChange={(e) => setAceptoTerminos(e.target.checked)}
+                    required
+                  />
+                </Form.Group>
               </Form.Group>
               <div className="d-flex align-items-center justify-content-center">
-                <Button variant="primary" type="submit">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  disabled={!aceptoTerminos}
+                >
                   Enviar
                 </Button>
               </div>
