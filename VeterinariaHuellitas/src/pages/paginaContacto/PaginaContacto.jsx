@@ -130,17 +130,29 @@ function formularioContacto() {
             </Form>
           </div>
           <div className="contact-options mt-4 text-center">
-            <div className="contact-option">
-              <FaPhone className="contact-icon" />
-              <p>Llámanos al 95 809 10 41</p>
-            </div>
-            <div className="contact-option">
-              <FaEnvelope className="contact-icon" />
-              <p>Envíanos un correo a info@example.com</p>
-            </div>
-            <div className="contact-option">
-              <FaWhatsapp className="contact-icon" />
-              <p>Contáctanos por Whatsapp al 95 809 10 41</p>
+            <div className="row">
+              <div className="col-md-4">
+                <div className="contact-container">
+                  <FaPhone className="contact-icon" />
+                  <p className="contact-text">Llámanos al 95 809 10 41</p>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="contact-container">
+                  <FaEnvelope className="contact-icon" />
+                  <p className="contact-text">
+                    info@example.com
+                  </p>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="contact-container">
+                  <FaWhatsapp className="contact-icon" />
+                  <p className="contact-text">
+                    Whatsapp al 95 809 10 41
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </Col>
