@@ -57,10 +57,12 @@ function Formulario() {
   return (
     <Container className="mt-5">
       <Container>
+        <Col md={12}>
         <div className="atencion-container">Atención las 24hs del día</div>
+        </Col>
       </Container>
       <Row className="justify-content-center">
-        <Col md={8}>
+        <Col md={10}>
           <div className="border rounded p-4 formulario">
             <h1 className="text-center">Información de la Mascota</h1>
             <Form onSubmit={handleSubmit}>

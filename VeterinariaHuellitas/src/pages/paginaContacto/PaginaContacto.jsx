@@ -55,7 +55,7 @@ function formularioContacto() {
   return (
     <Container className="mt-5">
       <Row className="justify-content-center">
-        <Col md={8}>
+        <Col md={10}>
           <div className="border rounded p-4 formularioContacto">
             <h1 className="text-center">Contactanos!</h1>
             <p className="text-center">
@@ -129,28 +129,24 @@ function formularioContacto() {
               </div>
             </Form>
           </div>
-          <div className="contact-options mt-4 text-center">
+          <div className="contact-options mt-5 mb-5 text-center">
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-4 mb-3 col-sm-12">
                 <div className="contact-container">
                   <FaPhone className="contact-icon" />
-                  <p className="contact-text">Llámanos al 95 809 10 41</p>
+                  <p className="contact-text">95 809 10 41</p>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 mb-3 col-sm-12">
                 <div className="contact-container">
                   <FaEnvelope className="contact-icon" />
-                  <p className="contact-text">
-                    info@example.com
-                  </p>
+                  <p className="contact-text">info@ejemplo.com</p>
                 </div>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 col-sm-12">
                 <div className="contact-container">
                   <FaWhatsapp className="contact-icon" />
-                  <p className="contact-text">
-                    Whatsapp al 95 809 10 41
-                  </p>
+                  <p className="contact-text">381 559 7130</p>
                 </div>
               </div>
             </div>
