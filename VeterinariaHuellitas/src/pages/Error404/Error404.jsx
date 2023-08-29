@@ -1,4 +1,5 @@
 import "./error404.css";
+import { Link } from "react-router-dom";
 
 function Error404() {
   return (
@@ -22,9 +23,10 @@ function Error404() {
                 sido eliminada
               </p>
 
-              <buttom className="btn btn-sz-primary mt-5">
-                <b>Volver al inicio</b>
-              </buttom>
+              <Link to="/">
+                <button className="btn btn-sz-primary mt-5"><b>Volver al inicio</b></button>
+              </Link>
+
             </div>
           </div>
 

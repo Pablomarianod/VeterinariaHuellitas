@@ -76,7 +76,7 @@ const EstructuraNavbar = () => {
           </Nav>
           <div className="mx-auto">
             <div className=" d-none d-lg-block">
-              <Navbar.Brand href="#">
+              <Navbar.Brand href="/">
                 <div
                   className="estilo-link fw-bold"
                   onClick={() => navigate('/error404')}
