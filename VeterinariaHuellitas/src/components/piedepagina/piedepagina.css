@@ -1,8 +1,9 @@
+.containerFooter{
+  background-color: #f8f9f9;
+}
 .margen footer {
   margin-top: 500px;
 }
-
-
 
 .estilo-titulo4 h4 {
   font-style: italic;
@@ -40,4 +41,3 @@ p {
 .cursiva {
   font-style: italic;
 }
-

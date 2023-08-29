@@ -7,7 +7,6 @@ import IconoReloj from "../../images/iconos/reloj.png";
 import IconoUbicacion from "../../images/iconos/ubicacion.png";
 import IconoCode from "../../images/iconos/code.svg";
 import "./piedepagina.css";
-import { useNavigate } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
