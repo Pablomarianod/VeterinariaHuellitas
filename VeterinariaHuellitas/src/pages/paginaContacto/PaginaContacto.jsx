@@ -140,7 +140,7 @@ function formularioContacto() {
               <div className="col-md-4 mb-3 col-sm-12">
                 <div className="contact-container">
                   <FaEnvelope className="contact-icon" />
-                  <p className="contact-text">info@ejemplo.com</p>
+                  <p className="contact-text">huellitas.rc2023@gmail.com</p>
                 </div>
               </div>
               <div className="col-md-4 col-sm-12">

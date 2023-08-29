@@ -20,5 +20,13 @@
     background-color: #08deba; 
     padding: 20px;
     border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  @media (max-width: 1000px) {
+    .contact-text {
+      font-size: 10px;
+    }
   }
   

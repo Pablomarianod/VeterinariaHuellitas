@@ -36,7 +36,7 @@ function Formulario() {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: "Por favor, acepta los términos antes de enviar el formulario.",
+        text: "Por favor, Coloca una edad valida.",
       });
     } else {
       Swal.fire({
