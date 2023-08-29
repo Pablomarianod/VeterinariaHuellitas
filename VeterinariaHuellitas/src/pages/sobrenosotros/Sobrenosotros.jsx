@@ -38,8 +38,8 @@ function About() {
             />
             <h3 className="text-center mt-4"><b>Pablo Decima</b></h3>
             <div className="d-flex justify-content-evenly">
-            <i className="bi bi-linkedin"></i>
-            <i class="bi bi-github"></i>
+            <i className="bi bi-linkedin mb-2"></i>
+            <i class="bi bi-github mb-2"></i>
             
             </div>
             
@@ -60,8 +60,8 @@ function About() {
             <h3 className="text-center mt-4"><b>Daniel Spiner</b></h3>
 
             <div className="d-flex justify-content-evenly">
-            <i className="bi bi-linkedin"></i>
-            <i class="bi bi-github"></i>
+            <i className="bi bi-linkedin mb-2"></i>
+            <i class="bi bi-github mb-2"></i>
             
             </div>
           
@@ -70,7 +70,7 @@ function About() {
 
         <div className="d-flex mx-4 my-4">
           <div
-            className="card fach cambiocolor"
+            className="card fach cambiocolor "
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
@@ -78,11 +78,12 @@ function About() {
               alt="esteban"
               className="fotoCircle mt-4"
             />
+            
             <h3 className="text-center mt-4"><b>Esteban Pedraza</b></h3>
 
-            <div className="d-flex justify-content-evenly">
-            <i className="bi bi-linkedin"></i>
-            <i class="bi bi-github"></i>
+            <div className="d-flex justify-content-evenly colorIcon">
+            <i className="bi bi-linkedin mb-2"></i>
+            <i class="bi bi-github mb-2"></i>
             
             </div>
             
@@ -105,8 +106,8 @@ function About() {
             <h3 className="text-center mt-4"><b>Santiago Aguirre</b></h3>
 
             <div className="d-flex justify-content-evenly">
-            <i className="bi bi-linkedin"></i>
-            <i class="bi bi-github"></i>
+            <i className="bi bi-linkedin mb-2"></i>
+            <i class="bi bi-github mb-2"></i>
             
             </div>
           
@@ -126,8 +127,8 @@ function About() {
             <h3 className="text-center mt-4"><b> Alberto Aguirre</b></h3>
 
             <div className="d-flex justify-content-evenly">
-            <i className="bi bi-linkedin"></i>
-            <i class="bi bi-github"></i>
+            <i className="bi bi-linkedin mb-2"></i>
+            <i class="bi bi-github mb-2 "></i>
             
             </div>
             

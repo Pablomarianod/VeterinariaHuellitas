@@ -68,7 +68,7 @@ h2 {
   }
   
   .card:hover {
-    background: #01DDF4;
+    background: #0B91DE;
     transform: translateY(-1%);
   }
   
@@ -84,3 +84,6 @@ h2 {
     color: #555;
   }
 
+.cambiocolor i{
+  font-size: 28px;
+ }
