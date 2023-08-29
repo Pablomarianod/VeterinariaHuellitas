@@ -8,12 +8,11 @@ import PaginaPrincipal from './pages/paginaPrincipal/PaginaPrincipal';
 import EstructuraNavbar from './components/header/Header'
 import PieDePagina from './components/piedepagina/Piedepagina'
 
-
 const App = () => {
-
 
   return (
     <>
+
       {/* <PaginaPrincipal /> */}
 
       <ContextoMascotas>

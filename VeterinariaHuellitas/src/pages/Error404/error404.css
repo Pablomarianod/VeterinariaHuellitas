@@ -1,0 +1,61 @@
+h1 {
+    font-size: 64px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  h1.neon-text {
+    font-size: 64px;
+    font-family: 'Arial', sans-serif;
+    color: #001effba;
+    text-shadow: 0 0 10px rgba(0, 145, 255, 0.8), 0 0 20px rgb(0, 145, 255), 0 0 30px rgb(98, 0, 255);
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+
+  
+  @keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgb(0, 145, 255), 0 0 30px rgb(98, 0, 255);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgb(0, 145, 255), 0 0 30px rgb(98, 0, 255);
+    }
+  }
+  
+  
+.colorFondo{
+    background-color: white;
+    padding: 20px;
+}
+
+
+.main-img{
+    padding-top: 30% ;
+    width: 100%;
+}
+ 
+
+.main-description {
+    font-size: 22px;
+    color: #555;
+    font-weight: bold;
+  }
+  
+  
+.btn-sz-primary {
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: #fff;
+    background-color: #34d796;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-sz-primary:hover {
+    background-color: #2ca981;
+  }
