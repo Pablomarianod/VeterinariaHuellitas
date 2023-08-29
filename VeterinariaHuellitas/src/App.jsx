@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <>
-      <PaginaPrincipal />
+      {/* <PaginaPrincipal /> */}
 
       <Rutas />
 

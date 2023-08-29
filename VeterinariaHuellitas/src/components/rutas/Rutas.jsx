@@ -7,6 +7,7 @@ import DetallePlanes from "../../pages/detallePlanes/DetallePlanes";
 const Rutas = () => {
     return(
         <Routes>
+            <Route path="/" element={<PaginaPrincipal />}/>
             <Route path="/home" element={<PaginaPrincipal />}/>
             {/* <Route path="/registroProductos" element={<RegistroProductos />}/> */}
             <Route path="/detallesDePlanes" element={<DetallePlanes />}/>
