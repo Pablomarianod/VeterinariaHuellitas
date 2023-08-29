@@ -142,13 +142,13 @@ const PieDePagina = () => {
             </Modal.Footer>
           </Modal>
           <img src={IconoCode} alt="Código" className="fa-lg color-icono mt-3" />
-          {/* Enlace "Sobre Nosotros" */}
+          
           <div className="mb-2">
             <h4 className="estilo-titulo4">Equipo de desarrollo:</h4>
           </div>
           <div
             className="estilo-link fw-bold cursor-pointer cursiva"
-            onClick={() => (window.location.href = "/ruta-de-contacto")}
+            onClick={() => (window.location.href = "/sobreNosotros")}
           >
             Sobre nosotros
           </div>

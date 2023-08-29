@@ -4,7 +4,6 @@ import ProductosContexto from './components/context/ProductosContext';
 import ContextoTurnos from './components/context/TurnosContext';
 import ContextoMascotas from './components/context/MascotasContext';
 import ContextoUsuarios from './components/context/UsuariosContext';
-import PaginaPrincipal from './pages/paginaPrincipal/PaginaPrincipal';
 import EstructuraNavbar from './components/header/Header'
 import PieDePagina from './components/piedepagina/Piedepagina'
 
@@ -12,8 +11,6 @@ const App = () => {
 
   return (
     <>
-
-      {/* <PaginaPrincipal /> */}
 
       <ContextoMascotas>
         <ContextoUsuarios>
