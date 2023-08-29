@@ -87,3 +87,28 @@ h2 {
 .cambiocolor i{
   font-size: 28px;
  }
+
+ .botonIcono {
+  font-size: 28px;
+  transition: color 0.3s;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.botonIcono:hover {
+  color: #0b91de;
+  background-color: white;
+}
+
+.botonIcono i {
+  font-size: 28px;
+  color: white;
+}
