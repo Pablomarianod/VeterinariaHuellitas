@@ -7,10 +7,13 @@ import "./administracion.css"
 const Administracion = () => {
     return (
         <>
-        <h1 className="d-flex justify-content-center tituloPagAdm">ADMINISTRACION</h1>
-        <TablaTurnos />
-        <TablaUsuarios />
-        <TablaMascotas />
+            <div className="containerAdministracion">
+
+                <h1 className="d-flex justify-content-center tituloPagAdm">ADMINISTRACION</h1>
+                <TablaTurnos />
+                <TablaUsuarios />
+                <TablaMascotas />
+            </div>
         </>
     );
 };
