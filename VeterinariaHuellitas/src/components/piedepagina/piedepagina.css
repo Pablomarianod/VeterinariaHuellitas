@@ -1,0 +1,43 @@
+.margen footer {
+  margin-top: 500px;
+}
+
+
+
+.estilo-titulo4 h4 {
+  font-style: italic;
+  margin-bottom: 5px;
+  color: #0b91de;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+
+.icono {
+  width: 62px; /* Cambia este valor según el tamaño deseado */
+  height: 50px;
+}
+
+.icono2 {
+  width: 5px; /* Cambia este valor según el tamaño deseado */
+  height: 5px;
+}
+.estilo-link,
+.estilo-link * {
+  color: #0b91de;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.estilo-link:hover,
+.estilo-link:hover * {
+  color: #005eff;
+}
+
+.cursiva {
+  font-style: italic;
+}
+

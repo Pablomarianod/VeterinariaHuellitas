@@ -5,7 +5,8 @@ import ContextoTurnos from './components/context/TurnosContext';
 import ContextoMascotas from './components/context/MascotasContext';
 import ContextoUsuarios from './components/context/UsuariosContext';
 import PaginaPrincipal from './pages/paginaPrincipal/PaginaPrincipal';
-
+import EstructuraNavbar from './components/header/header'
+import PieDePagina from './components/piedepagina/piedepagina'
 
 
 const App = () => {
@@ -20,13 +21,15 @@ const App = () => {
           <ContextoTurnos>
             <ProductosContexto>
               <Rutas />
+              <EstructuraNavbar />
+              <PieDePagina />
             </ProductosContexto>
           </ContextoTurnos>
         </ContextoUsuarios>
       </ContextoMascotas>
 
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
