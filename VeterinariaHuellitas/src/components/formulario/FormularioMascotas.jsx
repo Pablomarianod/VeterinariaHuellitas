@@ -5,7 +5,7 @@ import "./FormularioMascotas.css";
 import Swal from "sweetalert2";
 
 function Formulario() {
-  const [infoMascota, setMascotaInfo] = useState({
+  const [formData, setFormData] = useState({
     nombreMascota: "",
     especieMascota: "",
     tipoDeRaza: "",
@@ -15,8 +15,8 @@ function Formulario() {
 
   const handleMascotaInputChange = (event) => {
     const { name, value } = event.target;
-    setMascotaInfo({
-      ...infoMascota,
+    setFormData({
+      ...formData,
       [name]: value,
     });
   };
@@ -26,12 +26,12 @@ function Formulario() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
-      infoMascota.nombreMascota.trim() === "" ||
-      infoMascota.especieMascota.trim() === "" ||
-      infoMascota.tipoDeRaza.trim() === "" ||
-      infoMascota.sexoMascota.trim() === "" ||
-      !Number.isInteger(parseInt(infoMascota.edadMascota)) ||
-      parseInt(infoMascota.edadMascota) <= 0
+      formData.nombreMascota.trim() === "" ||
+      formData.especieMascota.trim() === "" ||
+      formData.tipoDeRaza.trim() === "" ||
+      formData.sexoMascota.trim() === "" ||
+      !Number.isInteger(parseInt(formData.edadMascota)) ||
+      parseInt(formData.edadMascota) <= 0
     ) {
       Swal.fire({
         icon: "error",
@@ -44,13 +44,15 @@ function Formulario() {
         title: "Éxito!",
         text: "Los datos se enviaron correctamente.",
       });
-      console.log("Información de la mascota:", infoMascota);
+      console.log("Información de la mascota:", formData);
       setFormData({
-        nombreApellido: "",
-        email: "",
-        telefono: "",
-        mensaje: "",
+        nombreMascota: "",
+        especieMascota: "",
+        tipoDeRaza: "",
+        sexoMascota: "",
+        edadMascota: "",
       });
+      setAceptoTerminos(false);
     }
   };
 
@@ -58,7 +60,7 @@ function Formulario() {
     <Container className="mt-5">
       <Container>
         <Col md={12}>
-        <div className="atencion-container">Atención las 24hs del día</div>
+          <div className="atencion-container">Atención las 24hs del día</div>
         </Col>
       </Container>
       <Row className="justify-content-center">
@@ -71,7 +73,7 @@ function Formulario() {
                 <Form.Control
                   type="text"
                   name="nombreMascota"
-                  value={infoMascota.nombreMascota}
+                  value={formData.nombreMascota}
                   onChange={handleMascotaInputChange}
                   required
                 />
@@ -81,7 +83,7 @@ function Formulario() {
                 <Form.Control
                   as="select"
                   name="especieMascota"
-                  value={infoMascota.especieMascota}
+                  value={formData.especieMascota}
                   onChange={handleMascotaInputChange}
                   required
                 >
@@ -98,7 +100,7 @@ function Formulario() {
                 <Form.Control
                   type="text"
                   name="tipoDeRaza"
-                  value={infoMascota.tipoDeRaza}
+                  value={formData.tipoDeRaza}
                   onChange={handleMascotaInputChange}
                   required
                 />
@@ -108,7 +110,7 @@ function Formulario() {
                 <Form.Control
                   type="text"
                   name="sexoMascota"
-                  value={infoMascota.sexoMascota}
+                  value={formData.sexoMascota}
                   onChange={handleMascotaInputChange}
                   required
                 />
@@ -118,7 +120,7 @@ function Formulario() {
                 <Form.Control
                   type="number"
                   name="edadMascota"
-                  value={infoMascota.edadMascota}
+                  value={formData.edadMascota}
                   onChange={handleMascotaInputChange}
                   required
                 />
