@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Button from 'react-bootstrap/Button';
 import {Nav, Navbar,} from 'react-bootstrap';
 import ModalLogin from '../src/components/Login/ModalLogin';
 import ModalRegistro from '../src/components/Registro/ModalRegistro';
