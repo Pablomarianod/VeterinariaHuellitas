@@ -13,11 +13,11 @@ function About() {
   return (
     <>
       <div>
-        <h1 className="text-center my-4"><b>¿Quiénes somos?</b></h1>
+        <h1 className="text-center my-4 tituloAbout"><b>¿Quiénes somos?</b></h1>
       </div>
 
 
-      <div className="container fach text-center p-5">
+      <div className="containerDescripcion text-center p-5">
         <p>
           Somos un equipo de desarrolladores Full Stack apasionados por los animales y la tecnología.
           Juntos, creamos 'Huellitas', una página de veterinaria que une nuestra experiencia en desarrollo con nuestro amor por los amigos peludos.
@@ -26,18 +26,18 @@ function About() {
         </p>
       </div>
 
-      <div className="container my-5">
+      <div className="containerSeparacion my-5">
         <hr />
       </div>
 
 
-      <h1 className="text-center"><b>Nuestro equipo:</b></h1>
+      <h1 className="text-center tituloAbout"><b>Nuestro equipo:</b></h1>
 
 
-      <div className="container d-flex flex-wrap justify-content-center">
-        <div className="d-flex mx-4 my-4">
+      <div className="containerCardAbout d-flex flex-wrap justify-content-center">
+        <div className="d-flex mx-4 my-4 cardIntegrante">
           <div
-            className="card fach cambiocolor"
+            className="cambiocolor"
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
@@ -45,7 +45,7 @@ function About() {
               alt="Pablo"
               className="fotoCircle mt-4"
             />
-            <h3 className="text-center mt-4"><b>Pablo Decima</b></h3>
+            <h3 className="text-center mt-4"><b>Pablo Décima</b></h3>
             <div className="d-flex justify-content-evenly">
             <i
                 className="bi bi-linkedin mb-2 botonIcono"
@@ -62,9 +62,9 @@ function About() {
           </div>
         </div>
 
-        <div className="d-flex mx-5 my-4">
+        <div className="d-flex mx-5 my-4 cardIntegrante">
           <div
-            className="card fach cambiocolor"
+            className="cambiocolor"
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
@@ -89,9 +89,9 @@ function About() {
           </div>
         </div>
 
-        <div className="d-flex mx-4 my-4">
+        <div className="d-flex mx-4 my-4 cardIntegrante">
           <div
-            className="card fach cambiocolor "
+            className="cambiocolor "
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
@@ -119,10 +119,11 @@ function About() {
       </div>
 
 
-      <div className="container d-flex flex-wrap justify-content-center">
-        <div className="d-flex mx-5 my-4">
+      <div className="containerCardAbout d-flex flex-wrap justify-content-center">
+        
+        <div className="d-flex mx-5 my-4 cardIntegrante">
           <div
-            className="card fach cambiocolor"
+            className="cambiocolor"
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
@@ -147,9 +148,9 @@ function About() {
           </div>
         </div>
 
-        <div className="d-flex mx-5 my-4">
+        <div className="d-flex mx-5 my-4 cardIntegrante">
           <div
-            className="card fach cambiocolor"
+            className=" cambiocolor"
             style={{ width: "20rem", height: "23rem" }}
           >
             <img

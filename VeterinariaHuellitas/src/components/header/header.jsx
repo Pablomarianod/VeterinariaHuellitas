@@ -24,19 +24,19 @@ const EstructuraNavbar = () => {
             >
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/*"
               >
-                Alimentos balanceados
+                Alimentos
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/*"
               >
                 Accesorios
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/*"
               >
                 Salud, Higiene y Estética
               </NavDropdown.Item>
@@ -49,19 +49,19 @@ const EstructuraNavbar = () => {
             >
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/*"
               >
                 Laboratorio
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/*"
               >
                 Peluquería
               </NavDropdown.Item>
               <NavDropdown.Item
                 className="text-center"
-                href="#"
+                href="/*"
               >
                 Urgencias
               </NavDropdown.Item>
@@ -69,7 +69,7 @@ const EstructuraNavbar = () => {
 
             <Nav.Link
               className="fw-bold text-center"
-              href="#"
+              href="/"
             >
               TURNOS
             </Nav.Link>

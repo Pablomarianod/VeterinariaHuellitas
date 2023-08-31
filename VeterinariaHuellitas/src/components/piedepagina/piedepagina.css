@@ -1,8 +1,7 @@
-.containerFooter{
+.containerFooter {
   background-color: #f8f9f9;
-}
-.margen footer {
-  margin-top: 500px;
+  border: blue 1px solid;
+
 }
 
 .estilo-titulo4 h4 {
@@ -15,16 +14,39 @@ p {
   margin-bottom: 5px;
 }
 
-
-.icono {
-  width: 62px; /* Cambia este valor según el tamaño deseado */
-  height: 50px;
+.logoFooter {
+  margin-top: 50px;
+  width: 200px;
 }
 
-.icono2 {
-  width: 5px; /* Cambia este valor según el tamaño deseado */
-  height: 5px;
+
+.iconoRedes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+
 }
+
+.iconoRedes .btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+
+}
+
+.iconoRedes .btn img {
+  width: 30px;
+  height: 30px;
+
+}
+
+.iconoRedes .btn:hover {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
 .estilo-link,
 .estilo-link * {
   color: #0b91de;
@@ -36,8 +58,4 @@ p {
 .estilo-link:hover,
 .estilo-link:hover * {
   color: #005eff;
-}
-
-.cursiva {
-  font-style: italic;
 }

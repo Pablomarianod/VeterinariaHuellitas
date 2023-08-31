@@ -34,32 +34,32 @@ const PieDePagina = () => {
         <div className="col-md-4 mt-3 mt-md-5 mt-lg-1 text-center">
           <div
             className="estilo-link fw-bold"
-            onClick={() => navigate("/error404")}
+            onClick={() => (window.location.href = "/")}
           >
-            <img src={FooterLogo} alt="Logo" className="img-fluid w-50" />
+            <img src={FooterLogo} alt="Logo" className="logoFooter" />
           </div>
           {/* Botones de redes sociales */}
-          <div className="mt-3 mb-5">
+          <div className="iconoRedes">
             <div
-              className="btn btn-success m-1"
-              onClick={() => navigate("/error404")}
+              className="btn btn-primary"
+              onClick={() => (window.location.href = "/*")}
             >
               <img src={IconoWhatsapp} alt="WhatsApp" />
             </div>
             <div
-              className="btn btn-success m-1"
-              onClick={() => navigate("/error404")}
+              className="btn btn-primary"
+              onClick={() => window.open("https://www.facebook.com/RollingCodeSchool", "_blank")}
             >
               <img src={IconoFacebook} alt="Facebook" />
             </div>
-            <div className="btn btn-success m-1" onClick={() => navigate("/error404")}>
+            <div className="btn btn-primary" onClick={() => window.open( "https://www.instagram.com/rollingcodeschool", "_blank")}>
               <img src={IconoInstagram} alt="Instagram" />
             </div>
           </div>
         </div>
 
         {/* Parte central */}
-        <div className="col-md-4 text-center estilo-titulo4">
+        <div className="col-md-4 text-center estilo-titulo4 my-1">
           <div className="row align-items-center">
             <div className="col-12 text-center">
               <img
@@ -75,10 +75,10 @@ const PieDePagina = () => {
           </div>
           {/* Horarios y número de contacto */}
           <p className="estilo-titulo4">Horarios de consulta:</p>
-          <p className="estilo-titulo4">Lunes a Viernes: 8:00 - 17:00</p>
+          <p className="estilo-titulo4">Lunes a Viernes: 8:30 - 20:30</p>
           <p className="estilo-titulo4">Sábados: 9:00 - 13:00</p>
           <p className="mt-3 estilo-titulo4">Teléfono de contacto:</p>
-          <p className="mb-3 estilo-titulo4">381-534-2027</p>
+          <p className="mb-3 estilo-titulo4">0381 578-3030</p>
           <div
             className="estilo-link fw-bold botonContactanos cursiva mb-5"
             onClick={() => (window.location.href = "/ruta-de-contacto")}
@@ -88,7 +88,7 @@ const PieDePagina = () => {
         </div>
 
         {/* Parte derecha */}
-        <div className="col-md-4 text-center estilo-titulo4">
+        <div className="col-md-4 text-center estilo-titulo4 my-4">
           <div className="row align-items-center">
             <div className="col-12 text-center">
               <img
@@ -142,7 +142,7 @@ const PieDePagina = () => {
             </Modal.Footer>
           </Modal>
           <img src={IconoCode} alt="Código" className="fa-lg color-icono mt-3" />
-          
+
           <div className="mb-2">
             <h4 className="estilo-titulo4">Equipo de desarrollo:</h4>
           </div>
