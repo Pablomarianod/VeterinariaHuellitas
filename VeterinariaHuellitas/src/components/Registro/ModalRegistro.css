@@ -1,0 +1,8 @@
+.imgRegistroFormulario{
+    height: 1rem;
+}
+
+.form-control:focus {
+    border-color: none !important; /* Elimina el borde azul */
+    box-shadow: none !important; /* Elimina cualquier sombra de enfoque */
+}
