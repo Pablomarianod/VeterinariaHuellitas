@@ -14,7 +14,7 @@ function Profesionales() {
           <Card.Body className="d-flex flex-column align-items-center">
             <Card.Title>Medicina General</Card.Title>
             <Card.Text>
-            Experta en brindar cuidados integrales para mascotas de todas las edades y razas, ofreciendo diagnósticos precisos, tratamientos efectivos y orientación en salud preventiva para mantener a tus compañeros peludos en su mejor estado.
+              Experta en brindar cuidados integrales para mascotas de todas las edades y razas, ofreciendo diagnósticos precisos, tratamientos efectivos y orientación en salud preventiva para mantener a tus compañeros peludos en su mejor estado.
             </Card.Text>
 
           </Card.Body>
@@ -25,7 +25,7 @@ function Profesionales() {
           <Card.Body className="d-flex flex-column align-items-center">
             <Card.Title>Traumatología</Card.Title>
             <Card.Text>
-            Especializado en lesiones óseas y articulares, nuestro traumatólogo es un veterinario altamente capacitado en diagnosticar y tratar problemas musculoesqueléticos en animales, restaurando la movilidad y calidad de vida de tus mascotas.
+              Especializado en lesiones óseas y articulares, nuestro traumatólogo es un veterinario altamente capacitado en diagnosticar y tratar problemas musculoesqueléticos en animales, restaurando la movilidad y calidad de vida de tus mascotas.
             </Card.Text>
 
           </Card.Body>
@@ -36,7 +36,7 @@ function Profesionales() {
           <Card.Body className="d-flex flex-column align-items-center">
             <Card.Title>Cardiología </Card.Title>
             <Card.Text>
-            Nuestra cardióloga se dedica a diagnosticar y tratar afecciones del corazón y el sistema circulatorio en animales. Su experiencia en ecocardiografías y terapias cardíacas garantiza un cuidado óptimo para la salud del corazón de tus mascotas.
+              Nuestra cardióloga se dedica a diagnosticar y tratar afecciones del corazón y el sistema circulatorio en animales. Su experiencia en ecocardiografías y terapias cardíacas garantiza un cuidado óptimo para la salud del corazón de tus mascotas.
             </Card.Text>
 
           </Card.Body>

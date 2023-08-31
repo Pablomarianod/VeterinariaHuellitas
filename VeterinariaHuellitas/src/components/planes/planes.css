@@ -1,10 +1,8 @@
-.planesContainer {
-  text-align: center;
-  margin: 20px;
-}
-
 .tituloPlanes {
   font-size: 64px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
   color: #0b91de;
 }
 
@@ -31,4 +29,10 @@
 
 .botonPlanes:hover {
   background-color: #0c64fa;
+}
+
+@media (max-width: 768px) {
+  .tituloPlanes {
+    font-size: 32px;
+  }
 }

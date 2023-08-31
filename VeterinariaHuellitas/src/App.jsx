@@ -4,8 +4,8 @@ import ProductosContexto from './components/context/ProductosContext';
 import ContextoTurnos from './components/context/TurnosContext';
 import ContextoMascotas from './components/context/MascotasContext';
 import ContextoUsuarios from './components/context/UsuariosContext';
-import EstructuraNavbar from './components/header/Header'
-import PieDePagina from './components/piedepagina/Piedepagina'
+import EstructuraNavbar from './components/header/header';
+import PieDePagina from './components/piedepagina/piedepagina';
 
 const App = () => {
 

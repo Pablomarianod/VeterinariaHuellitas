@@ -1,7 +1,8 @@
 .containerFooter {
   background-color: #f8f9f9;
-  border: blue 1px solid;
-
+  width: 100%;
+  overflow-x: hidden;
+  
 }
 
 .estilo-titulo4 h4 {
@@ -58,4 +59,13 @@ p {
 .estilo-link:hover,
 .estilo-link:hover * {
   color: #005eff;
+}
+
+@media (max-width: 640px) {
+  .containerFooter {
+    padding: 0;
+  }
+  .col-md-4.text-center {
+    margin-top: 20px;
+  }
 }
