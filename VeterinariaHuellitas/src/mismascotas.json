@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "nombre": "Patricio",
+      "especie": "Perro",
+      "raza": "Bichón Frisé",
+      "foto": "url_de_la_foto1.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Hércules",
+      "especie": "Gato",
+      "raza": "Mestizo",
+      "foto": "url_de_la_foto2.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Chelo",
+      "especie": "perro",
+      "raza": "Bulldog Francés",
+      "foto": "url_de_la_foto3.jpg"
+    }
+  ]

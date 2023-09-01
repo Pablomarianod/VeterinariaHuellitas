@@ -1,0 +1,29 @@
+.contenedorClima{
+    display: grid;
+    justify-content: column;
+    align-items: column;
+    width: 100%;
+}
+
+.contenedorTituloClima{
+    font-size: 28px;
+    margin-top: 10px;
+    color: #333;
+
+}
+
+.contenedorIconClima{
+    margin-top: -15px;
+}
+
+.contenedorInfoClima{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+.updateClima{
+    font-size: 14px;
+    margin-top: 2px;
+}
