@@ -79,7 +79,7 @@ const PieDePagina = () => {
             <p className="mb-3 estilo-titulo4">0381 578-3030</p>
             <div
               className="estilo-link fw-bold mb-5"
-              onClick={() => (window.location.href = "/ruta-de-contacto")}
+              onClick={() => (window.location.href = "/paginaContacto")}
             >
               Contactanos
             </div>

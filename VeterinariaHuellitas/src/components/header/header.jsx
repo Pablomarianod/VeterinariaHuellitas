@@ -99,7 +99,7 @@ const Header = () => {
 
                         <Nav className="mx-auto">
                             <button
-                                className="btn btn-info text-black mx-auto rounded-pill fw-bold"
+                                className="btn btn-info text-black mx-auto mb-4 rounded-pill fw-bold"
                                 type='submit' onClick={handleShowLogin}
 
 
@@ -116,7 +116,7 @@ const Header = () => {
 
                     </Navbar.Collapse>
                     <div className="d-lg-none mx-auto mt-0">
-                        <Navbar.Brand href="/error404">
+                        <Navbar.Brand href="/">
                             <img
                                 src={NavbarLogoReducido}
                                 alt="Logo de Huellitas reducido"

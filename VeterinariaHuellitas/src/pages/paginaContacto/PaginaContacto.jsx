@@ -61,11 +61,11 @@ function formularioContacto() {
             <p className="text-center">
               Responderemos con mucho gusto a todas tus preguntas. No obstante,
               si tu mascota está enferma, ponte en contacto con nosotros por
-              teléfono (95 809 10 41), ya que es posible que necesite atención
+              teléfono (0381 578-3030), ya que es posible que necesite atención
               veterinaria urgente y las consultas por e-mail pueden no ser
               respondidas en el mismo día.
               <br />
-              <strong>Teléfono de URGENCIAS 24H:</strong> llama al 95 809 10 41
+              <strong>Teléfono de URGENCIAS 24H:</strong> llama al 0381 578-3030
             </p>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="nombreApellido">
@@ -134,7 +134,7 @@ function formularioContacto() {
               <div className="col-md-4 mb-3 col-sm-12">
                 <div className="contact-container">
                   <FaPhone className="contact-icon" />
-                  <p className="contact-text">95 809 10 41</p>
+                  <p className="contact-text">0381 578-3030</p>
                 </div>
               </div>
               <div className="col-md-4 mb-3 col-sm-12">
@@ -146,7 +146,7 @@ function formularioContacto() {
               <div className="col-md-4 col-sm-12">
                 <div className="contact-container">
                   <FaWhatsapp className="contact-icon" />
-                  <p className="contact-text">381 559 7130</p>
+                  <p className="contact-text">0381 578-3030</p>
                 </div>
               </div>
             </div>

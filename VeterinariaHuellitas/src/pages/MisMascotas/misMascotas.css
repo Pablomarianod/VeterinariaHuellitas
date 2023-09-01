@@ -3,7 +3,7 @@
     font-style: italic;
 }
 
-.container {
+.containerMascotas {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Card from "react-bootstrap/Card";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { Card, Modal, Button, Form }from "react-bootstrap";
 import "./misMascotas.css";
 import defaultGatoImage from "../../images/defaultGato.jpeg";
 import defaultPerroImage from "../../images/defaultPerro.avif";
@@ -64,7 +61,7 @@ function MisMascotas() {
   };
 
   return (
-    <div className="container">
+    <div className="containerMascotas">
       <h1 className="colorYestilo-verde">Mis Mascotas</h1>
       <h5>Desde aquí puedes administrar tus mascotas:</h5>
       <div className="d-flex flex-wrap justify-content-center">
