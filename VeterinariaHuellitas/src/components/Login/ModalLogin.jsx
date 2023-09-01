@@ -2,7 +2,7 @@ import {Form, Modal} from 'react-bootstrap';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { UsuarioContexto, usarUsuContext  } from '../Context/UsuariosContexto';
-import ModalRegistro from '../Registro/ModalRegistro';
+// import ModalRegistro from '../Registro/ModalRegistro';
 import gatoLogin from '../../images/Gato-login.svg';
 import perroLoginn from '../../images/Perro-img-login.svg';
 import imgUsuarioLogin from '../../images/username-icon.svg'
