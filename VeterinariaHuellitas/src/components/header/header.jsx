@@ -4,14 +4,19 @@ import NavbarLogo from "../../images/navbarLogo.png";
 import NavbarLogoReducido from "../../images/navbarLogoReducido.png";
 import "./header.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-// import ModalLogin from '../Login/ModalLogin';
+// import ModalLogin from '../src/components/Login/ModalLogin';
+// import ModalRegistro from '../src/components/Registro/ModalRegistro';
 
-const EstructuraNavbar = () => {
+const Header = () => {
 
   const [show, setShow] = useState(false);
 
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
+  const [showLogin, setShowLogin] = useState();
+  const [showRegistro, setShowRegistro] = useState();
+  const handleCloseLogin = () => setShowLogin(false);
+  const handleShowLogin = () => setShowLogin(true);
+  const handleCloseRegistro = () => setShowRegistro(false);
+  const handleShowRegistro = () => setShowRegistro(true);
 
   return (
     <>
@@ -91,15 +96,24 @@ const EstructuraNavbar = () => {
               </div>
             </div>
 
+
             <Nav className="mx-auto">
               <button
                 className="btn btn-info text-black mx-auto rounded-pill fw-bold"
-                type='submit' onClick={() => handleShow()}
-               
+                type='submit' onClick={handleShowLogin}
+
+
               >
                 INICIAR SESIÓN
               </button>
+              {
+                showLogin && <ModalLogin show={showLogin} handleClose={handleCloseLogin} handleShowRegistro={handleShowRegistro}></ModalLogin>
+              }
             </Nav>
+            {/* <Nav.Link end className='nav-item nav-link' onClick={handleShowRegistro}>Registrarse</Nav.Link>
+            {
+              showRegistro && <ModalRegistro show={showRegistro} handleClose={handleCloseRegistro}></ModalRegistro>
+            } */}
           </Navbar.Collapse>
           <div className="d-lg-none mx-auto mt-0">
             <Navbar.Brand href="/error404">
@@ -113,8 +127,24 @@ const EstructuraNavbar = () => {
         </div>
       </Navbar>
       {/* <ModalLogin show={show} handleClose={handleClose} /> */}
+
+      {/* Codigo de santiago */}
+
+      {/* <Navbar expand="lg" className="bg-body-tertiary">
+        <Nav.Link end className='nav-item nav-link' onClick={handleShowLogin}>INICIAR SESIÓN</Nav.Link>
+        {
+          showLogin && <ModalLogin show={showLogin} handleClose={handleCloseLogin} handleShowRegistro={handleShowRegistro}></ModalLogin>
+        }
+        <Nav.Link end className='nav-item nav-link' onClick={handleShowRegistro}>Registrarse</Nav.Link>
+        {
+          showRegistro && <ModalRegistro show={showRegistro} handleClose={handleCloseRegistro}></ModalRegistro>
+        }
+      </Navbar> */}
+
+      {/* Fin de codigo de santiago */}
+
     </>
   );
 };
 
-export default EstructuraNavbar;
+export default Header;
