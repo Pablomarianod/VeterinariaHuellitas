@@ -47,7 +47,8 @@ const UsuariosContexto = ({children}) => {
     const login = async (user) => {
         try {
             const response = await loginRequest(user)
-            console.log(response)
+            localStorage.setItem("usuario", JSON.stringify(user));
+            window.location.href = '/';
         } catch (error) {
             setErrorLogin(error.response.data);
         }
