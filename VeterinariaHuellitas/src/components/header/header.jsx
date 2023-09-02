@@ -3,13 +3,14 @@ import { useState } from 'react';
 import NavbarLogo from "../../images/navbarLogo.png";
 import NavbarLogoReducido from "../../images/navbarLogoReducido.png";
 import "./header.css";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Modal } from "react-bootstrap";
 import ModalLogin from '../../components/Login/ModalLogin';
 import ModalRegistro from '../../components/Registro/ModalRegistro';
+import ModalTurnos from "../turnos/ModalTurnos";
+import gatoLogin from "../../images/login/Gato-login.svg";
+import perroLoginn from "../../images/login//Perro-img-login.svg";
 
 const Header = () => {
-
-    const [show, setShow] = useState(false);
 
     const [showLogin, setShowLogin] = useState();
     const [showRegistro, setShowRegistro] = useState();
@@ -17,6 +18,15 @@ const Header = () => {
     const handleShowLogin = () => setShowLogin(true);
     const handleCloseRegistro = () => setShowRegistro(false);
     const handleShowRegistro = () => setShowRegistro(true);
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const modalTurnos = () => {
+        handleShow();
+    };
 
     return (
         <>
@@ -78,7 +88,7 @@ const Header = () => {
 
                             <Nav.Link
                                 className="fw-bold text-center"
-                                href="/"
+                                type='submit' onClick={modalTurnos}
                             >
                                 TURNOS
                             </Nav.Link>
@@ -126,6 +136,36 @@ const Header = () => {
                     </div>
                 </div>
             </Navbar>
+
+            <Modal centered size="md" show={show} onHide={handleClose}>
+                <div className="contenedorModalTurnos">
+                    <Modal.Header
+                        className="headerModalTurnos border-bottom-0"
+                        closeButton
+                    >
+                        <div>
+                            <div className="contenedorImagenesTurnos">
+                                <img
+                                    src={gatoLogin}
+                                    alt="CaraDegato"
+                                    className="alturaImagen"
+                                />
+                                <img
+                                    src={perroLoginn}
+                                    alt="CaraDePerro"
+                                    className="alturaImagen"
+                                />
+                            </div>
+                            <h2 className="contenedorTituloTurnos text-center mt-2">
+                                TURNOS
+                            </h2>
+                        </div>
+                    </Modal.Header>
+                    <Modal.Body className="bodyModalTurnos">
+                        <ModalTurnos handleClose={handleClose} />
+                    </Modal.Body>
+                </div>
+            </Modal>
 
         </>
     );

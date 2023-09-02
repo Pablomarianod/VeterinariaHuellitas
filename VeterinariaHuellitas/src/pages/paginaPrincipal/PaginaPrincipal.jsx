@@ -3,7 +3,7 @@ import Carrusel from "../../components/carrusel/Carrusel"
 import Servicios from "../../components/servicios/servicios";
 import Profesionales from "../../components/profesionales/Profesionales"
 import Planes from "../../components/planes/Planes"
-// import Productos from "../../components/productos/Productos";
+import Productos from "../../components/productos/Productos";
 import Slider from "../../components/slider/slider";
 
 // import { useContext } from "react";
@@ -26,7 +26,7 @@ const PaginaPrincipal = () => {
       <Servicios />
       <Profesionales />
       <Planes />
-      {/* <Productos /> */}
+      <Productos />
       <Slider />
       
     </>
