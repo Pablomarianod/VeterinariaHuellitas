@@ -33,11 +33,10 @@ const ModalRegistro = ({show, handleClose}) =>{
   
   
   const onSubmit = handleSubmit( async (values) => {
-    console.log(values);
     registrar(values);
     setDatosUsuario({nombre: "", apellido: "", correo: "", contrasena: "", telefono: "", rol: "usuario"}) 
     reset();
-    /*handleCloseRegistro();*/
+    handleClose();
     Swal.fire('Su usuario se creo exitosamente', ':)', 'success');    
   })
 
