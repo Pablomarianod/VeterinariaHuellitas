@@ -40,9 +40,10 @@ const UsuariosContext = ({ children }) => {
 
     const eliminarUsuarios = async (id) => {
         try {
-            await axios.delete(`http://localhost:8080/usuarios/${id}`);
+            await axios.delete(`http://localhost:8080/api/usuarios/${id}`);
             const eliminarUsuarios = usuarios.filter((usuario) => usuario.id !== id);
-            setTurnos(eliminarUsuarios)
+            /*setTurnos(eliminarUsuarios)*/
+            await obtenerUsuarios();
         } catch (error) {
             console.log(error)
         }

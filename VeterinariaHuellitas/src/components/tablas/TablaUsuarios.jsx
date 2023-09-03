@@ -70,7 +70,7 @@ const TablaUsuarios = () => {
                                         </Button>
                                         <Button
                                             className="botonEliminarAdmin"
-                                            onClick={() => handleDelete(usuario.id)}
+                                            onClick={() => handleDelete(usuario._id)}
                                         >
                                             Eliminar
                                         </Button>
