@@ -74,7 +74,7 @@ const FormEditarUsuarios = ({ handleClose, edicionUsuario }) => {
                     className="inputTelefono form-control mb-2"
                     required
                 ></input>
-
+                {/*
                 <label htmlFor="contraseña" className="labelContraseña form-label">
                     Contraseña
                 </label>
@@ -86,7 +86,7 @@ const FormEditarUsuarios = ({ handleClose, edicionUsuario }) => {
                     className="inputContraseña form-control mb-2"
                     required
                 ></input>
-
+                */}
                 <Button type="submit" className="botonModalUsuarios">
                     EDITAR
                 </Button>

@@ -10,7 +10,8 @@ const UsuariosContext = ({ children }) => {
 
     const obtenerUsuarios = async () => {
         try {
-            const response = await axios.get("http://localhost:8080/usuarios");
+            /*const response = await axios.get("http://localhost:8080/usuarios");*/
+            const response = await axios.get("http://localhost:8080/api/usuarios"); /*NOTA: TENEMOS QUE VER BIEN COMO SE ARMARA EL ENRUTAMIENTO */
             setUsuarios(response.data);
             console.log(usuarios);
         } catch (error) {
@@ -26,7 +27,7 @@ const UsuariosContext = ({ children }) => {
 
     const editarUsuarios = async (usuario) => {
         try {
-            await axios.put(`http://localhost:8080/usuarios/${usuario.id}`, usuario);
+            await axios.put(`http://localhost:8080/api/usuarios/${usuario._id}`, usuario);
             await obtenerUsuarios();
         } catch (error) {
             console.log(error)
