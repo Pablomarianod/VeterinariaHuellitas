@@ -15,7 +15,7 @@ import './ModalRegistro.css'
 const ModalRegistro = ({show, handleClose}) =>{
 
   const {register, handleSubmit ,formState:{errors}, watch, reset} = useForm();
-  const { registrar, errorRegistro} = usarUsuContext();
+  const {registrar, errorRegistro} = usarUsuContext();
 
   const [datosUsuario, setDatosUsuario] = useState({
     nombre: "",
@@ -33,12 +33,14 @@ const ModalRegistro = ({show, handleClose}) =>{
   
   
   const onSubmit = handleSubmit( async (values) => {
-    registrar(values);
-    setDatosUsuario({nombre: "", apellido: "", correo: "", contrasena: "", telefono: "", rol: "usuario"}) 
-    reset();
-    handleClose();
-    Swal.fire('Su usuario se creo exitosamente', ':)', 'success');    
-  })
+    const respuesta = await registrar(values);
+    if(respuesta !== 400){
+      setDatosUsuario({nombre: "", apellido: "", correo: "", contrasena: "", telefono: "", rol: "usuario"}) 
+      reset();
+      handleClose();
+      Swal.fire('Su usuario se creo exitosamente', ':)', 'success'); 
+    }
+  });
 
   return(
     <Modal show={show} onHide={handleClose}>
@@ -57,9 +59,9 @@ const ModalRegistro = ({show, handleClose}) =>{
       <div className='px-5'> 
          
         {
-          errorRegistro.map((error, i) => {
-            <div className='bg-red-500 p-2 text-white' key={i}> {error} </div>
-          })
+          errorRegistro.map((error, i) => (
+            <div className='alert alert-danger p-2' key={i}> {error} </div>
+          ))
         }
 
         <form onSubmit={onSubmit}>

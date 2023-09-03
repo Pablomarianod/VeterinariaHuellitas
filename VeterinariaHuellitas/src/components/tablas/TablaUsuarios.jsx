@@ -48,7 +48,6 @@ const TablaUsuarios = () => {
                                 <th>Apellido</th>
                                 <th>Correo</th>
                                 <th>Telefono</th>
-                                <th>Contraseña</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -60,7 +59,6 @@ const TablaUsuarios = () => {
                                     <td data-label="Apellido">{usuario.apellido} </td>
                                     <td data-label="Correo">{usuario.correo}</td>
                                     <td data-label="Telefono">{usuario.telefono}</td>
-                                    <td data-label="Contraseña">{usuario.contraseña}</td>
                                     <td>
                                         <Button
                                             className="botonEditarAdmin me-2"

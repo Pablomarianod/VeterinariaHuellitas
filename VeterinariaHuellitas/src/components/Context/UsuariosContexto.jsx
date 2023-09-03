@@ -20,27 +20,20 @@ const UsuariosContexto = ({children}) => {
     const[usuario, setUsuario] = useState();
     /*const {autentificado, setAutentificado} = useState(false); /*Solo no sirve para saber si el usuario esta autentificado */
     const [errorRegistro, setErrorRegistro] = useState([]);
+    
     const [errorLogin, setErrorLogin] = useState([]);
 
-    /*
-    const getUser = async () => {
-        try {
-            const response = await axios.get("http://localhost:3000/usuarios")
-            console.log(response.data)
-            setUsuario(response.data) 
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    */
 
     const registrar = async (user) => {
         try {
             const response = await registerRequest(user);
             console.log(response.data)
-            setUsuario(response.data)
+            setUsuario(response.data);
+            return response.status;   
         } catch (error) {
-            setErrorRegistro(error.response.data)
+            console.log(error.response);
+            setErrorRegistro(error.response.data); 
+            return error.response.status;                   
         }
     }
 
