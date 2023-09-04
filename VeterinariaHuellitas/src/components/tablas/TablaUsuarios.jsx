@@ -53,7 +53,7 @@ const TablaUsuarios = () => {
                         </thead>
                         <tbody>
                             {usuarios.map((usuario) => (
-                                <tr className="columnaAdmin" key={usuario.id}>
+                                <tr className="columnaAdmin" key={usuario._id}>
                                     <td></td>
                                     <td data-label="Nombre">{usuario.nombre}</td>
                                     <td data-label="Apellido">{usuario.apellido} </td>

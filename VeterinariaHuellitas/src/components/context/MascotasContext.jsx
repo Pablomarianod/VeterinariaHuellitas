@@ -10,7 +10,7 @@ const MascotasContext = ({ children }) => {
 
   const obtenerMascotas = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/mascotas");
+      const response = await axios.get("http://localhost:8080/api/mascotas");
       setMascotas(response.data);
       console.log(mascotas);
     } catch (error) {

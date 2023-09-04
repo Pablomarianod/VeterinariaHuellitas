@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Button, Table, Modal } from "react-bootstrap";
-import { ContextoMascotas } from "../context/MascotasContext";
+import { ContextoMascotas } from "../Context/MascotasContext";
 import FormEditarMascotas from "../turnos/FormEditarMascotas";
 import Swal from "sweetalert2";
 import "./estiloTablas.css";
@@ -53,10 +53,10 @@ const TablaMascotas = () => {
                         </thead>
                         <tbody>
                             {mascotas.map((mascota) => (
-                                <tr className="columnaAdmin" key={mascota.id}>
+                                <tr className="columnaAdmin" key={mascota._id}>
                                     <td></td>
                                     <td data-label="Nombre">{mascota.nombre}</td>
-                                    <td data-label="Sexo">{mascota.sexo} </td>
+                                    <td data-label="Sexo">{mascota.genero} </td>
                                     <td data-label="Edad">{mascota.edad}</td>
                                     <td data-label="Especie">{mascota.especie}</td>
                                     <td data-label="Raza">{mascota.raza}</td>
