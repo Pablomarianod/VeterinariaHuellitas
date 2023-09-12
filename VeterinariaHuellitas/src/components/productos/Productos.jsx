@@ -6,8 +6,6 @@ import { Button, Card } from 'react-bootstrap';
 const Productos = () => {
     const { productos } = useContext(ProductosContexto);
 
-    console.log(productos, "prueba");
-
     return (
         <div className="product-container col-12">
             <h1>Productos Destacados</h1>

@@ -30,7 +30,7 @@ const ModalTurnos = ({ handleClose }) => {
       fecha.setHours(0, 0, 0, 0);
       fechaActual.setHours(0, 0, 0, 0);
 
-      if (fecha.getTime()  < fechaActual.getTime()) {
+      if (fecha.getTime() < fechaActual.getTime()) {
         setValidaFecha(
           "Los turnos se programan con al menos 24hs de anticipacion"
         );
@@ -44,17 +44,17 @@ const ModalTurnos = ({ handleClose }) => {
     if (e.target.name === "hora") {
       const hora = e.target.value;
       const [inputHour, inputMinute] = hora.split(":").map(Number);
-  
+
       const horaAbre = { hour: 8, minute: 30 };
       const horaCierra = { hour: 20, minute: 30 };
       const inputTime = { hour: inputHour, minute: inputMinute };
-  
+
       const timeToMillis = ({ hour, minute }) => hour * 60 * 60 * 1000 + minute * 60 * 1000;
-      
+
       const inputTimeMillis = timeToMillis(inputTime);
       const horaAbreMillis = timeToMillis(horaAbre);
       const horaCierraMillis = timeToMillis(horaCierra);
-  
+
       if (inputTimeMillis < horaAbreMillis || inputTimeMillis > horaCierraMillis) {
         setValidaHora("Horario de atención de 8:30 a 20:30");
       } else {
@@ -62,55 +62,57 @@ const ModalTurnos = ({ handleClose }) => {
       }
     }
   };
-  
-  
+
+
   const handleSubmit = async (e) => {
 
     e.preventDefault();
-    
-    if(validaFecha === "" && validaHora === ""){
-        try {
-          const response = await axios.post(
-            "http://localhost:8080/turnos",
-            {...formTurnos, plan: planElegido}
-          );
 
-          setFormTurnos({
-            fecha: "",
-            hora: "",
-            plan:""
-          });
-          // emailjs.sendForm('service_h1i7c1u', 'template_ysl5w5s', form.current, '3ISQGDxm28JZUQxZw')
-          Swal.fire({
-            icon: "success",
-            title: "¡Listo!",
-            text: "Turno agendado con éxito",
-            showConfirmButton: false,
-            timer: 1200
-          });
-          handleClose()
-        }
-        catch (error) {
-          if (error.response) {
-            if (error.response.status === 400) {
-              Swal.fire({
-                icon: "error",
-                title: "Error!",
-                text: "Asegurate de elegir el horario en el que esta abierta nuestra veterinaria",
-                confirmButtonColor: "#0056b3",
-              });
-            } else if (error.response.status === 409) {
-              Swal.fire({
-                icon: "error",
-                title: "Error!",
-                text: "Turno no disponible",
-                confirmButtonColor: "#0056b3",
-              });
-            }
+    if (validaFecha === "" && validaHora === "") {
+      try {
+        const response = await axios.post(
+          "http://localhost:8080/api/turno",
+          { ...formTurnos, plan: planElegido }
+          );
+          
+
+        setFormTurnos({
+          fecha: "",
+          hora: "",
+          plan: ""
+        });
+        // emailjs.sendForm('service_h1i7c1u', 'template_ysl5w5s', form.current, '3ISQGDxm28JZUQxZw')
+        Swal.fire({
+          icon: "success",
+          title: "¡Listo!",
+          text: "Turno agendado con éxito",
+          showConfirmButton: false,
+          timer: 1200
+        });
+        handleClose()
+      }
+      catch (error) {
+        if (error.response) {
+          if (error.response.status === 400) {
+            Swal.fire({
+              icon: "error",
+              title: "Error!",
+              text: "Asegurate de elegir el horario en el que esta abierta nuestra veterinaria",
+              confirmButtonColor: "#0056b3",
+            });
+          } else if (error.response.status === 409) {
+            Swal.fire({
+              icon: "error",
+              title: "Error!",
+              text: "Turno no disponible",
+              confirmButtonColor: "#0056b3",
+            });
           }
+        }
         console.log(error)
-        }}
-      };
+      }
+    }
+  };
 
   return (
     <>

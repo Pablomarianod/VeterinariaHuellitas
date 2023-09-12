@@ -10,9 +10,9 @@ const TurnosContext = ({ children }) => {
 
   const obtenerTurnos = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/turnos");
+      const response = await axios.get("http://localhost:8080/api/turnos");
       setTurnos(response.data);
-      console.log(turnos);
+      // console.log(turnos);
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +26,7 @@ const TurnosContext = ({ children }) => {
 
 const editarTurnos = async (turno)=>{
   try {
-    await axios.put(`http://localhost:8080/turnos/${turno.id}`, turno);
+    await axios.put(`http://localhost:8080/api/turnos/${turno.id}`, turno);
     await obtenerTurnos();
   } catch (error) {
     console.log(error)
@@ -39,7 +39,7 @@ const editarTurnos = async (turno)=>{
 
 const eliminarTurnos = async (id) =>{
   try {
-    await axios.delete(`http://localhost:8080/turnos/${id}`);
+    await axios.delete(`http://localhost:8080/api/turnos/${id}`);
     const eliminarTurnos = turnos.filter((turno) => turno.id !== id);
     setTurnos(eliminarTurnos)
   } catch (error) {

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { ContextoTurnos } from "../context/TurnosContext";
+import { ContextoTurnos } from "../Context/TurnosContext";
 import Swal from "sweetalert2";
 import { Button } from "react-bootstrap";
 import './modalTurnos.css'

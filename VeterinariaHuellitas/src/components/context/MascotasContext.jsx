@@ -4,7 +4,22 @@ import axios from "axios";
 export const ContextoMascotas = createContext();
 
 const MascotasContext = ({ children }) => {
-  const [mascotas, setMascotas] = useState([]);
+const [mascotas, setMascotas] = useState([]);
+
+  //POST
+
+  const agregarMascota = async (mascota) => {
+  try {
+    const response = await axios.post(
+      "http://localhost:8080/api/mascotas",
+      mascota
+    );
+    setMascotas([...mascotas, response.data]);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 //GET
 
@@ -26,7 +41,7 @@ const MascotasContext = ({ children }) => {
 
 const editarMascotas = async (mascota)=>{
   try {
-    await axios.put(`http://localhost:8080/mascotas/${mascota.id}`, mascota);
+    await axios.put(`http://localhost:8080/api/mascotas/${mascota.id}`, mascota);
     await obtenerMascotas();
   } catch (error) {
     console.log(error)
@@ -39,7 +54,7 @@ const editarMascotas = async (mascota)=>{
 
 const eliminarMascotas = async (id) =>{
   try {
-    await axios.delete(`http://localhost:8080/mascotas/${id}`);
+    await axios.delete(`http://localhost:8080/api/mascotas/${id}`);
     const eliminarMascotas = mascotas.filter((mascota) => mascota.id !== id);
     setMascotas(eliminarMascotas)
   } catch (error) {
@@ -49,7 +64,7 @@ const eliminarMascotas = async (id) =>{
 
   return (
     <>
-      <ContextoMascotas.Provider value={{ obtenerMascotas, editarMascotas, eliminarMascotas, mascotas }}>
+      <ContextoMascotas.Provider value={{ agregarMascota, obtenerMascotas, editarMascotas, eliminarMascotas, mascotas }}>
         {children}
       </ContextoMascotas.Provider>
     </>
