@@ -4,7 +4,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./FormularioMascotas.css";
 import Swal from "sweetalert2";
 
-function Formulario() {
+const FormularioMascotas =() => {
   const [formData, setFormData] = useState({
     nombreMascota: "",
     especieMascota: "",
@@ -151,4 +151,4 @@ function Formulario() {
   );
 }
 
-export default Formulario;
+export default FormularioMascotas;

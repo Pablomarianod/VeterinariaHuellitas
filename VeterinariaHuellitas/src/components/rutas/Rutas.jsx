@@ -6,6 +6,7 @@ import DetallePlanes from "../../pages/detallePlanes/DetallePlanes";
 import Error404 from "../../pages/Error404/Error404";
 import Sobrenosotros from "../../pages/sobrenosotros/Sobrenosotros";
 import PaginaContacto from "../../pages/paginaContacto/PaginaContacto";
+import MisMascotas from "../../pages/MisMascotas/MisMascotas"
 
 const Rutas = () => {
     return(
@@ -17,6 +18,7 @@ const Rutas = () => {
             <Route path="/*" element={<Error404 />}/>
             <Route path="/sobreNosotros" element={<Sobrenosotros />}/>
             <Route path="/paginaContacto" element={<PaginaContacto />}/>
+            <Route path="/misMascotas" element={<MisMascotas />}/>
         </Routes>
         
 

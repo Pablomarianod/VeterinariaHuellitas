@@ -116,7 +116,7 @@
     {
       "id": 3,
       "nombre": "Hércules",
-      "especie": "Gato",
+      "especie": "gato",
       "raza": "Mestizo",
       "foto": "url_de_la_foto2.jpg"
     },
@@ -126,6 +126,12 @@
       "especie": "perro",
       "raza": "Bulldog Francés",
       "foto": "url_de_la_foto3.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Sky",
+      "especie": "perro",
+      "raza": "Waimaraner"
     }
   ]
 }

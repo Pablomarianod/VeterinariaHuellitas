@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { Card, Modal, Button, Form }from "react-bootstrap";
+import { Card, Modal, Button, Form } from "react-bootstrap";
 import "./misMascotas.css";
 import defaultGatoImage from "../../images/defaultGato.jpeg";
 import defaultPerroImage from "../../images/defaultPerro.avif";
+import axios from 'axios'
+import FormularioMascotas from "../../components/formulario/FormularioMascotas";
 
 function MisMascotas() {
   const [mascotas, setMascotas] = useState([]);
   const [agregandoMascota, setAgregandoMascota] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   const [mascotaAEliminar, setMascotaAEliminar] = useState(null);
   const [mostrarBotonAgregar, setMostrarBotonAgregar] = useState(true);
+
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const manejarAgregar = () => {
     setAgregandoMascota(true);
@@ -47,12 +55,20 @@ function MisMascotas() {
       setShowModal(false);
     }
   };
+  const mostrarMascotas = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/mascotas');
+      console.log(response.data)
+      setMascotas(response.data)
+    } catch (error) {
+      console.log(error)
+    }
+  };
 
   useEffect(() => {
-    fetch('/src/mismascotas.json')
-      .then((response) => response.json())
-      .then((data) => setMascotas(data))
-      .catch((error) => console.error("Error:", error));
+
+    mostrarMascotas()
+
   }, []);
 
   const obtenerImagenPredeterminada = (especie) => {
@@ -95,12 +111,16 @@ function MisMascotas() {
         ))}
       </div>
       {mostrarBotonAgregar && (
-        <button className="btn btn-info" onClick={manejarAgregar}>
+        <button className="btn btn-info" onClick={handleShow}>
           AGREGAR NUEVA MASCOTA
         </button>
       )}
 
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
+      <Modal show={show} onHide={handleClose}>
+
+        <Modal.Body><FormularioMascotas /></Modal.Body>
+      </Modal>
+      {/* <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Confirmar eliminación</Modal.Title>
         </Modal.Header>
@@ -119,80 +139,11 @@ function MisMascotas() {
             CONFIRMAR
           </Button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
 
       {agregandoMascota && <FormularioMascota onSubmit={manejarEnviar} onCancel={manejarCancelar} />}
     </div>
   );
 }
-
-const FormularioMascota = ({ onSubmit, onCancel }) => {
-  const [nombre, setNombre] = useState("");
-  const [especie, setEspecie] = useState("");
-  const [raza, setRaza] = useState("");
-  const [foto, setFoto] = useState(null);
-
-  const manejarEnviar = (e) => {
-    e.preventDefault();
-    onSubmit({ nombre, especie, raza, foto });
-    setNombre("");
-    setEspecie("");
-    setRaza("");
-    setFoto(null);
-  };
-
-  return (
-    <div className="formulario-mascota">
-      <h2>Agregar Nueva Mascota</h2>
-      <Form onSubmit={manejarEnviar}>
-        <Form.Group controlId="nombre">
-          <Form.Label>Nombre:</Form.Label>
-          <Form.Control
-            type="text"
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
-            required
-            pattern="[A-Za-z]{3,25}"
-            title="El nombre debe contener solo letras y tener entre 3 y 25 caracteres."
-          />
-        </Form.Group>
-        <Form.Group controlId="especie">
-          <Form.Label>Especie:</Form.Label>
-          <Form.Control
-            type="text"
-            value={especie}
-            onChange={(e) => setEspecie(e.target.value)}
-            required
-            pattern="[A-Za-z0-9]{3,25}"
-            title="La especie debe contener letras y/o números y tener entre 3 y 25 caracteres."
-          />
-        </Form.Group>
-        <Form.Group controlId="raza">
-          <Form.Label>Raza:</Form.Label>
-          <Form.Control
-            type="text"
-            value={raza}
-            onChange={(e) => setRaza(e.target.value)}
-            required
-            pattern="[A-Za-z]{3,40}"
-            title="La raza debe contener solo letras y tener entre 3 y 40 caracteres."
-          />
-        </Form.Group>
-        <Form.Group controlId="foto">
-          <Form.Label>Foto:</Form.Label>
-          <Form.Control
-            type="file"
-            accept="image/*"
-            onChange={(e) => setFoto(e.target.files[0])}
-          />
-        </Form.Group>
-        <Button type="submit" variant="info">AGREGAR</Button>
-        <Button className="w-100 mt-3" type="button" variant="danger" onClick={onCancel}>
-          CANCELAR
-        </Button>
-      </Form>
-    </div>
-  );
-};
 
 export default MisMascotas;

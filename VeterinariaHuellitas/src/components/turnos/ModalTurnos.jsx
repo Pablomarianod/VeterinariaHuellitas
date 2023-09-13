@@ -63,23 +63,54 @@ const ModalTurnos = ({ handleClose }) => {
     }
   };
 
+  const opcionesHora = () =>{
+    const horaInicio = { hour: 8, minute: 30 };
+    const horaCierre = { hour: 20, minute: 0 };
+    const intervaloHora = 30;
+    const listaHoras = [];
+  
+    let horaActual = { ...horaInicio };
+  
+    while (
+      horaActual.hour < horaCierre.hour ||
+      (horaActual.hour === horaCierre.hour && horaActual.minute <= horaCierre.minute)
+    ) {
+      const formatoHora = `${String(horaActual.hour).padStart(2, '0')}:${String(
+        horaActual.minute
+      ).padStart(2, '0')}`;
+      listaHoras.push(
+        <option key={formatoHora} value={formatoHora}>
+          {formatoHora}
+        </option>
+      );
+  
+      horaActual.minute += intervaloHora;
+      if (horaActual.minute >= 60) {
+        horaActual.minute -= 60;
+        horaActual.hour += 1;
+      }
+    }
+  
+    return listaHoras;
+  }
+  
+
 
   const handleSubmit = async (e) => {
 
     e.preventDefault();
 
-    if (validaFecha === "" && validaHora === "") {
-      try {
-        const response = await axios.post(
-          "http://localhost:8080/api/turno",
-          { ...formTurnos, plan: planElegido }
-          );
-          
-
+    // if (validaFecha === "" && validaHora === "") {
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/turno",
+        { ...formTurnos, plan: planElegido }
+      );
+      if (response.status === 201) {
         setFormTurnos({
           fecha: "",
           hora: "",
-          plan: ""
+          plan: planElegido
         });
         // emailjs.sendForm('service_h1i7c1u', 'template_ysl5w5s', form.current, '3ISQGDxm28JZUQxZw')
         Swal.fire({
@@ -91,32 +122,34 @@ const ModalTurnos = ({ handleClose }) => {
         });
         handleClose()
       }
-      catch (error) {
-        if (error.response) {
-          if (error.response.status === 400) {
-            Swal.fire({
-              icon: "error",
-              title: "Error!",
-              text: "Asegurate de elegir el horario en el que esta abierta nuestra veterinaria",
-              confirmButtonColor: "#0056b3",
-            });
-          } else if (error.response.status === 409) {
-            Swal.fire({
-              icon: "error",
-              title: "Error!",
-              text: "Turno no disponible",
-              confirmButtonColor: "#0056b3",
-            });
-          }
+    }
+    catch (error) {
+      if (error.response) {
+        if (error.response.status === 409) {
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Turno no disponible",
+            confirmButtonColor: "#0056b3",
+          });
+        } else if (error.response.status === 400) {
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Asegurate de elegir el horario en el que esta abierta nuestra veterinaria",
+            confirmButtonColor: "#0056b3",
+
+          });
         }
-        console.log(error)
       }
+      console.log(error)
+      // }
     }
   };
 
   return (
     <>
-      <form ref={form} onSubmit={handleSubmit} className="contenedorFormTurnos">
+      <form onSubmit={handleSubmit} className="contenedorFormTurnos">
         <label htmlFor="fecha" className="labelFecha form-label">
           Fecha
         </label>
@@ -134,7 +167,7 @@ const ModalTurnos = ({ handleClose }) => {
         <label htmlFor="hora" className="labelHora form-label">
           Hora
         </label>
-        <input
+        {/* <input
           type="time"
           name="hora"
           value={formTurnos.hora.toString()}
@@ -142,7 +175,18 @@ const ModalTurnos = ({ handleClose }) => {
           onBlur={handleBlurHora}
           className="inputHora form-control mb-2"
           required
-        />
+        /> */}
+        <select
+          name="hora"
+          value={formTurnos.hora.toString()}
+          onChange={handleChange}
+          onBlur={handleBlurHora}
+          className="inputHora form-select mb-2"
+          required
+        >
+          <option value="">Selecciona la hora</option>
+          {opcionesHora()}
+        </select>
         {validaHora && <div className="campoInvalido">{validaHora}</div>}
         <label htmlFor="plan" className="labelPlan form-label">
           Plan
