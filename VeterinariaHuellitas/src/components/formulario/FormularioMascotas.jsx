@@ -4,13 +4,18 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./FormularioMascotas.css";
 import Swal from "sweetalert2";
 
-const FormularioMascotas =() => {
+const FormularioMascotas = () => {
   const [formData, setFormData] = useState({
     nombreMascota: "",
-    especieMascota: "",
-    tipoDeRaza: "",
+    especie: "",
+    raza: "",
     sexoMascota: "",
-    edadMascota: "",
+    edad: "",
+    // nombreMascota: "",
+    // especieMascota: "",
+    // tipoDeRaza: "",
+    // sexoMascota: "",
+    // edadMascota: "",
   });
 
   const handleMascotaInputChange = (event) => {
@@ -27,11 +32,17 @@ const FormularioMascotas =() => {
     event.preventDefault();
     if (
       formData.nombreMascota.trim() === "" ||
-      formData.especieMascota.trim() === "" ||
-      formData.tipoDeRaza.trim() === "" ||
+      formData.especie.trim() === "" ||
+      formData.raza.trim() === "" ||
       formData.sexoMascota.trim() === "" ||
-      !Number.isInteger(parseInt(formData.edadMascota)) ||
-      parseInt(formData.edadMascota) <= 0
+      // formData.edad.trim() === "" ||
+
+      // formData.nombreMascota.trim() === "" ||
+      // formData.especieMascota.trim() === "" ||
+      // formData.tipoDeRaza.trim() === "" ||
+      // formData.sexoMascota.trim() === "" ||
+      !Number.isInteger(parseInt(formData.edad)) ||
+      parseInt(formData.edad) <= 0
     ) {
       Swal.fire({
         icon: "error",
@@ -47,10 +58,16 @@ const FormularioMascotas =() => {
       console.log("Información de la mascota:", formData);
       setFormData({
         nombreMascota: "",
-        especieMascota: "",
-        tipoDeRaza: "",
+        especie: "",
+        raza: "",
         sexoMascota: "",
-        edadMascota: "",
+        edad: "",
+
+        // nombreMascota: "",
+        // especieMascota: "",
+        // tipoDeRaza: "",
+        // sexoMascota: "",
+        // edadMascota: "",
       });
       setAceptoTerminos(false);
     }
@@ -78,12 +95,12 @@ const FormularioMascotas =() => {
                   required
                 />
               </Form.Group>
-              <Form.Group controlId="especieMascota">
+              <Form.Group controlId="especie">
                 <Form.Label>Especie de la Mascota</Form.Label>
                 <Form.Control
                   as="select"
-                  name="especieMascota"
-                  value={formData.especieMascota}
+                  name="especie"
+                  value={formData.especie}
                   onChange={handleMascotaInputChange}
                   required
                 >
@@ -95,32 +112,45 @@ const FormularioMascotas =() => {
                 </Form.Control>
               </Form.Group>
 
-              <Form.Group controlId="tipoDeRaza">
+              <Form.Group controlId="raza">
                 <Form.Label>Raza</Form.Label>
                 <Form.Control
                   type="text"
-                  name="tipoDeRaza"
-                  value={formData.tipoDeRaza}
+                  name="raza"
+                  value={formData.raza}
                   onChange={handleMascotaInputChange}
                   required
                 />
               </Form.Group>
               <Form.Group controlId="sexoMascota">
                 <Form.Label>Sexo</Form.Label>
+
                 <Form.Control
+                  as="select"
+                  name="sexoMascota"
+                  value={formData.sexoMascota}
+                  onChange={handleMascotaInputChange}
+                  required
+                >
+                  <option value="">Seleccionar Sexo</option>
+                  <option value="Hembra">Hembra</option>
+                  <option value="Macho">Macho</option>
+                </Form.Control>
+
+                {/* <Form.Control
                   type="text"
                   name="sexoMascota"
                   value={formData.sexoMascota}
                   onChange={handleMascotaInputChange}
                   required
-                />
+                /> */}
               </Form.Group>
-              <Form.Group controlId="edadMascota">
+              <Form.Group controlId="edad">
                 <Form.Label>Edad de la Mascota</Form.Label>
                 <Form.Control
                   type="number"
-                  name="edadMascota"
-                  value={formData.edadMascota}
+                  name="edad"
+                  value={formData.edad}
                   onChange={handleMascotaInputChange}
                   required
                 />
@@ -136,6 +166,7 @@ const FormularioMascotas =() => {
               </Form.Group>
               <div className="d-flex align-items-center justify-content-center">
                 <Button
+                className="BotonModalregistro"
                   variant="primary"
                   type="submit"
                   disabled={!aceptoTerminos}

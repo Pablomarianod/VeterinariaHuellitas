@@ -1,10 +1,9 @@
 .atencion-container {
   background-color: #0c64fa;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
-  padding: 8rem;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
   font-size: 32px;
   font-weight: bold;
   width: 100%;
@@ -37,14 +36,14 @@
 }
 
 /* Button */
-.btn-primary {
+.BotonModalregistro {
   background-color: #08deba;
   color: black;
   border-color: #007bff;
   padding: 10px 20px;
 }
 
-.btn-primary:hover {
+.BotonModalregistro:hover {
   background-color: #0056b3;
   border-color: #0056b3;
 }

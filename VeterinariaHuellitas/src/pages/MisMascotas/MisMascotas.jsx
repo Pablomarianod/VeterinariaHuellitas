@@ -79,12 +79,12 @@ function MisMascotas() {
   return (
     <div className="containerMascotas">
       <h1 className="colorYestilo-verde">Mis Mascotas</h1>
-      <h5>Desde aquí puedes administrar tus mascotas:</h5>
+      <h5 className="subtituloMascotas">Desde aquí puedes administrar tus mascotas:</h5>
       <div className="d-flex flex-wrap justify-content-center">
         {mascotas.map((mascota) => (
-          <Card key={mascota.id} className="card">
+          <Card key={mascota.id} className="cardMascotas">
             <div className="card-header">
-              <Card.Title className="card-title">{mascota.nombre}</Card.Title>
+              <Card.Title className="card-title-mascotas">{mascota.nombre}</Card.Title>
               <button
                 className="btn btn-danger"
                 onClick={() => mostrarModalEliminar(mascota.id)}
@@ -95,14 +95,14 @@ function MisMascotas() {
             <img
               src={mascota.foto || obtenerImagenPredeterminada(mascota.especie)}
               alt={`Imagen de ${mascota.nombre}`}
-              className="card-img"
+              
               onError={(e) => {
                 e.target.src = obtenerImagenPredeterminada(mascota.especie);
               }}
             />
             <Card.Body>
               <Card.Text>
-                <span className="card-text">Especie: {mascota.especie}</span>
+                <span className="card-text-mascotas">Especie: {mascota.especie}</span>
                 <br></br>
                 <span className="species">Raza: {mascota.raza}</span>
               </Card.Text>
@@ -120,26 +120,6 @@ function MisMascotas() {
 
         <Modal.Body><FormularioMascotas /></Modal.Body>
       </Modal>
-      {/* <Modal show={showModal} onHide={() => setShowModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>Confirmar eliminación</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {mascotaAEliminar && (
-            <span>
-              ¿Deseas eliminar a {mascotaAEliminar.nombre}?
-            </span>
-          )}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="info" onClick={() => setShowModal(false)}>
-            CANCELAR
-          </Button>
-          <Button variant="danger" onClick={confirmarEliminar}>
-            CONFIRMAR
-          </Button>
-        </Modal.Footer>
-      </Modal> */}
 
       {agregandoMascota && <FormularioMascota onSubmit={manejarEnviar} onCancel={manejarCancelar} />}
     </div>
