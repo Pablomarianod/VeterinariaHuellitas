@@ -57,8 +57,8 @@ function MisMascotas() {
   };
   const mostrarMascotas = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/mascotas');
-      console.log(response.data)
+      const response = await axios.get('http://localhost:8080/api/mascotas');
+      // console.log(response.data)
       setMascotas(response.data)
     } catch (error) {
       console.log(error)
@@ -82,9 +82,10 @@ function MisMascotas() {
       <h5 className="subtituloMascotas">Desde aquí puedes administrar tus mascotas:</h5>
       <div className="d-flex flex-wrap justify-content-center">
         {mascotas.map((mascota) => (
+
           <Card key={mascota.id} className="cardMascotas">
             <div className="card-header">
-              <Card.Title className="card-title-mascotas">{mascota.nombre}</Card.Title>
+              <Card.Title className="card-title-mascotas">{mascota.nombreMascota}</Card.Title>
               <button
                 className="btn btn-danger"
                 onClick={() => mostrarModalEliminar(mascota.id)}
@@ -95,7 +96,7 @@ function MisMascotas() {
             <img
               src={mascota.foto || obtenerImagenPredeterminada(mascota.especie)}
               alt={`Imagen de ${mascota.nombre}`}
-              
+
               onError={(e) => {
                 e.target.src = obtenerImagenPredeterminada(mascota.especie);
               }}

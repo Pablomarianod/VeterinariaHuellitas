@@ -55,8 +55,8 @@ const TablaMascotas = () => {
                             {mascotas.map((mascota) => (
                                 <tr className="columnaAdmin" key={mascota._id}>
                                     <td></td>
-                                    <td data-label="Nombre">{mascota.nombre}</td>
-                                    <td data-label="Sexo">{mascota.genero} </td>
+                                    <td data-label="Nombre">{mascota.nombreMascota}</td>
+                                    <td data-label="Sexo">{mascota.sexoMascota} </td>
                                     <td data-label="Edad">{mascota.edad}</td>
                                     <td data-label="Especie">{mascota.especie}</td>
                                     <td data-label="Raza">{mascota.raza}</td>

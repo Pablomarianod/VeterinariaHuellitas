@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./FormularioMascotas.css";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const FormularioMascotas = () => {
+
+
   const [formData, setFormData] = useState({
     nombreMascota: "",
     especie: "",
@@ -28,6 +31,14 @@ const FormularioMascotas = () => {
 
   const [aceptoTerminos, setAceptoTerminos] = useState(false);
 
+  const crearMascota = async () => {
+    try {
+      const response = await axios.post("http://localhost:8080/api/mascota", { ...formData });
+      
+    } catch (error) {
+      console.log(error.response)
+    }
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
@@ -35,7 +46,6 @@ const FormularioMascotas = () => {
       formData.especie.trim() === "" ||
       formData.raza.trim() === "" ||
       formData.sexoMascota.trim() === "" ||
-      // formData.edad.trim() === "" ||
 
       // formData.nombreMascota.trim() === "" ||
       // formData.especieMascota.trim() === "" ||
@@ -50,6 +60,8 @@ const FormularioMascotas = () => {
         text: "Por favor, Coloca una edad valida.",
       });
     } else {
+      
+      crearMascota();
       Swal.fire({
         icon: "success",
         title: "Éxito!",
@@ -166,7 +178,7 @@ const FormularioMascotas = () => {
               </Form.Group>
               <div className="d-flex align-items-center justify-content-center">
                 <Button
-                className="BotonModalregistro"
+                  className="BotonModalregistro"
                   variant="primary"
                   type="submit"
                   disabled={!aceptoTerminos}
