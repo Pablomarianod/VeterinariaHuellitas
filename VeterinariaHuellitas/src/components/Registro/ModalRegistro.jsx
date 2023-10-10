@@ -2,20 +2,19 @@ import { useState } from 'react';
 import {Modal} from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
-import { usarUsuContext } from '../Context/UsuariosContexto';
-
 import svgNombreRegistro from '../../images/username-icon.svg';
 import svgCorreoRegistro from '../../images/email.svg';
 import svgContrasenaRegistro from '../../images/password-icon.svg';
 import svgTelefonoRegistro from '../../images/phone-icon.svg';
 import './ModalRegistro.css'
+import { ContextoUsuarios } from '../context/UsuariosContext';
 
 
 
 const ModalRegistro = ({show, handleClose}) =>{
 
   const {register, handleSubmit ,formState:{errors}, watch, reset} = useForm();
-  const {registrar, errorRegistro} = usarUsuContext();
+  const {registrar, errorRegistro} = ContextoUsuarios();
 
   const [datosUsuario, setDatosUsuario] = useState({
     nombre: "",

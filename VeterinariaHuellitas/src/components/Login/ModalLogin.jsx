@@ -1,19 +1,20 @@
 import {Form, Modal} from 'react-bootstrap';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { UsuarioContexto, usarUsuContext  } from '../Context/UsuariosContexto';
+
 // import ModalRegistro from '../Registro/ModalRegistro';
 import gatoLogin from '../../images/Gato-login.svg';
 import perroLoginn from '../../images/Perro-img-login.svg';
 import imgUsuarioLogin from '../../images/username-icon.svg'
 import imgContraseñaLogin from '../../images/password-icon.svg'
 import './ModalLogin.css';
+import { ContextoUsuarios } from '../context/UsuariosContext';
 
 
 
 const ModalLogin = ({show, handleClose, handleShowRegistro}) => {
   const {register, handleSubmit ,formState:{errors}, watch, reset} = useForm();
-  const { login, errorLogin} = usarUsuContext();
+  const { login, errorLogin} = ContextoUsuarios();
 
   const [correo, setCorreo] = useState();
   const [contrasenia, setcontrasenia] = useState();
