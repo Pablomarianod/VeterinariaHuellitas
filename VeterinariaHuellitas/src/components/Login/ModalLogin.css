@@ -10,3 +10,31 @@
     height: 1rem;
 }
 
+.formulario_label {
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.formulario_grupo-input {
+    position: relative;
+}
+
+.formulario_input {
+    width: 100%;
+    background: white;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+
+.formulario_input:focus {
+    border: 3px solid #0075ff;
+    outline: none;
+    box-shadow: 3px 0 30px rgba(163, 163, 163, 163);
+
+}

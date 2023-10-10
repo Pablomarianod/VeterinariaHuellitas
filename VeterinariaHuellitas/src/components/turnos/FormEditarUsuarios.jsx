@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 
 const FormEditarUsuarios = ({ handleClose, edicionUsuario }) => {
     const [usuario, setUsuario] = useState(edicionUsuario);
-    const { editarUsuarios } = useContext(ContextoUsuarios);
+    const { modificarUsuarios } = useContext(ContextoUsuarios);
 
     const handleChange = (e) => {
         setUsuario({ ...usuario, [e.target.name]: e.target.value });
@@ -14,7 +14,7 @@ const FormEditarUsuarios = ({ handleClose, edicionUsuario }) => {
 
     const handleEdit = (e) => {
         e.preventDefault();
-        editarUsuarios(usuario);
+        modificarUsuarios(usuario);
         Swal.fire({
             title: "Usuario editado correctamente",
             icon: "success",
