@@ -1,7 +1,7 @@
 import './ModalRegistro.css'
 import { useState, useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { ContextoUsuarios } from '../context/UsuariosContext';
+import { ContextoUsuarios } from '../Context/UsuariosContext';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
