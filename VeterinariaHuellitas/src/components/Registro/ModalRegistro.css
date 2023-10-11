@@ -1,5 +1,19 @@
-.imgRegistroFormulario {
-    height: 1rem;
+.titulo-registro {
+    margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezado-modalRegistro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-cerrar {
+    margin-right: 10px;
 }
 
 .formulario_label {
@@ -77,4 +91,8 @@
 
 .formulario_grupo-incorrecto .formulario_input {
     border: 3px solid #bb2929;
+}
+.mostrarClave{
+    background-color: rgb(72, 72, 72);
+    color: white;
 }
