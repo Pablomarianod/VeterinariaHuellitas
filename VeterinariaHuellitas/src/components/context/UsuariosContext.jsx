@@ -78,12 +78,20 @@ const UsuariosContext = ({ children }) => {
 
             console.log(jwtDecode)
 
-            localStorage.setItem("usuario", jwtToken);
-            setUsuarioLogueado(jwtDecode)
+            const usuario = {
+                id: jwtDecode.id,
+                nombre: jwtDecode.nombre,
+                apellido: jwtDecode.apellido,
+                correo: jwtDecode.correo,
+                rol: jwtDecode.rol,
+            };
+
+            localStorage.setItem("usuario", JSON.stringify(usuario));
+            setUsuarioLogueado(usuario);
 
             console.log("Ingresado")
 
-            if (jwtDecode.rol === "admin") {
+            if (usuario.rol === "admin") {
                 window.location.href = "/administracion";
             } else {
                 window.location.href = "/";

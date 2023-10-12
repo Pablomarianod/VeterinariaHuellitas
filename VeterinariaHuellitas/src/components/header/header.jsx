@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from 'react';
 import NavbarLogo from "../../images/navbarLogo.png";
 import NavbarLogoReducido from "../../images/navbarLogoReducido.png";
@@ -9,6 +9,7 @@ import ModalRegistro from '../../components/Registro/ModalRegistro';
 import ModalTurnos from "../turnos/ModalTurnos";
 import gatoLogin from "../../images/login/Gato-login.svg";
 import perroLoginn from "../../images/login//Perro-img-login.svg";
+import { ContextoUsuarios } from "../Context/UsuariosContext";
 
 const Header = () => {
 
@@ -28,11 +29,25 @@ const Header = () => {
         handleShow();
     };
 
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const { logout } = useContext(ContextoUsuarios);
+
     return (
         <>
             <Navbar expand="lg">
                 <div className="container">
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+                    {usuario?.rol === "admin" ? (
+                        <>
+                            <Nav.Link
+                                className="btn btn-info text-black mx-auto mb-4 rounded-pill fw-bold"
+                                href="/administracion"
+                            >
+                                ADMINISTRACIÓN
+                            </Nav.Link>
+                        </>
+                    ) : null}
 
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
@@ -123,6 +138,25 @@ const Header = () => {
                         {
                             showRegistro && <ModalRegistro show={showRegistro} handleClose={handleCloseRegistro}></ModalRegistro>
                         }
+
+                        {usuario ? (
+                            <>
+                                <Nav className="mx-auto">
+                                    <button
+                                        className="btn btn-info text-black mx-auto mb-4 rounded-pill fw-bold"
+                                        onClick={logout}
+                                        href="/">
+                                        CERRAR SESIÓN
+                                    </button>
+                                </Nav>
+
+                            </>
+                        ) : (
+                            <>
+
+                            </>
+                        )}
+
 
                     </Navbar.Collapse>
                     <div className="d-lg-none mx-auto mt-0">

@@ -25,12 +25,9 @@ const ModalLogin = ({ show, handleClose, handleShowRegistro }) => {
     setMostrarPassword(!mostrarPassword);
   };
 
-  //const ModalLogin = ({ show, handleClose, handleShowRegistro }) => {
+  
   // const { register, handleSubmit, formState: { errors }, watch, reset } = useForm();
   // const { login, errorLogin } = useContext(ContextoUsuarios);
-
-  // const [correo, setCorreo] = useState();
-  // const [contrasenia, setcontrasenia] = useState();
 
   // const { usuarios } = useContext(ContextoUsuarios)
 
