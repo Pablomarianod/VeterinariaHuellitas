@@ -72,6 +72,7 @@ const ModalRegistro = ({ show, handleClose }) => {
 
         setTimeout(() => {
           setMostrarAlertaRegistro(false);
+          handleClose();
         }, 3000);
 
       } else {
@@ -138,7 +139,6 @@ const ModalRegistro = ({ show, handleClose }) => {
     return '';
   };
 
-  // Funciones para mostrar/ocultar contraseñas
   const toggleMostrarPassword = () => {
     setMostrarPassword(!mostrarPassword);
   };
@@ -149,7 +149,6 @@ const ModalRegistro = ({ show, handleClose }) => {
 
   return (
     <Modal show={show} onHide={handleClose}>
-
 
       <div className="encabezado-modalRegistro">
         <h2 className='text-center mt-3 titulo-registro'>Crea tu cuenta</h2>
@@ -352,11 +351,22 @@ const ModalRegistro = ({ show, handleClose }) => {
 
           </form >
 
+          {mostrarAlertaRegistro && (
+            <div className="alert alert-success" role="alert">
+              Usuario registrado con éxito!
+            </div>
+          )}
+
+          {mostrarErrorContraseña && (
+            <div className="alert alert-danger" role="alert">
+              Las contraseñas no coinciden.
+            </div>
+          )}
+
         </div>
       </Modal.Body>
     </Modal>
   )
 }
-
 
 export default ModalRegistro

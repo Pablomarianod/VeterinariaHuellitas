@@ -67,12 +67,10 @@ const UsuariosContext = ({ children }) => {
 
     const login = async (correo, password) => {
         try {
-
             const response = await axios.post("http://localhost:8080/api/login", {
                 correo,
                 password,
             });
-            // console.log(response.data);
             const jwtToken = response.data.data.token
             const jwtDecode = jwt_decode(jwtToken)
 
@@ -83,6 +81,7 @@ const UsuariosContext = ({ children }) => {
                 nombre: jwtDecode.nombre,
                 apellido: jwtDecode.apellido,
                 correo: jwtDecode.correo,
+                password: jwtDecode.password,
                 rol: jwtDecode.rol,
             };
 
@@ -96,8 +95,11 @@ const UsuariosContext = ({ children }) => {
             } else {
                 window.location.href = "/";
             }
+            return true;
         } catch (error) {
-            console.log(error)
+            console.error(error);
+            // alert("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
+            return false;
         }
     };
 

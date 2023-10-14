@@ -30,7 +30,7 @@ const Header = () => {
     };
 
     const usuario = JSON.parse(localStorage.getItem("usuario"));
-    const { logout } = useContext(ContextoUsuarios);
+    const { logOut } = useContext(ContextoUsuarios);
 
     return (
         <>
@@ -38,16 +38,7 @@ const Header = () => {
                 <div className="container">
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-                    {usuario?.rol === "admin" ? (
-                        <>
-                            <Nav.Link
-                                className="btn btn-info text-black mx-auto mb-4 rounded-pill fw-bold"
-                                href="/administracion"
-                            >
-                                ADMINISTRACIÓN
-                            </Nav.Link>
-                        </>
-                    ) : null}
+
 
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
@@ -107,6 +98,18 @@ const Header = () => {
                             >
                                 TURNOS
                             </Nav.Link>
+                            
+                            {usuario?.rol === "admin" ? (
+                                <>
+                                    <Nav.Link
+                                        className="btn btn-info text-black mx-auto mb-4 rounded-pill fw-bold"
+                                        href="/administracion"
+                                    >
+                                        ADMINISTRACIÓN
+                                    </Nav.Link>
+                                </>
+                            ) : null}
+                            
                         </Nav>
                         <div className="mx-auto">
                             <div className=" d-none d-lg-block">
@@ -123,14 +126,31 @@ const Header = () => {
 
 
                         <Nav className="mx-auto">
-                            <button
-                                className="btn btn-info text-black mx-auto mb-4 rounded-pill fw-bold"
-                                type='submit' onClick={handleShowLogin}
 
-
-                            >
-                                INICIAR SESIÓN
-                            </button>
+                            {usuario ? (
+                                <>
+                                    <Nav className="mx-auto">
+                                        <button
+                                            className="btn btn-info text-black mx-auto mb-4 rounded-pill fw-bold"
+                                            onClick={logOut}
+                                            href="/"
+                                        >
+                                            CERRAR SESIÓN
+                                        </button>
+                                    </Nav>
+                                </>
+                            ) : (
+                                <>
+                                    <Nav className="mx-auto">
+                                        <button
+                                            className="btn btn-info text-black mx-auto mb-4 rounded-pill fw-bold"
+                                            type='submit' onClick={handleShowLogin}
+                                        >
+                                            INICIAR SESIÓN
+                                        </button>
+                                    </Nav>
+                                </>
+                            )}
                             {
                                 showLogin && <ModalLogin show={showLogin} handleClose={handleCloseLogin} handleShowRegistro={handleShowRegistro}></ModalLogin>
                             }
@@ -138,25 +158,6 @@ const Header = () => {
                         {
                             showRegistro && <ModalRegistro show={showRegistro} handleClose={handleCloseRegistro}></ModalRegistro>
                         }
-
-                        {usuario ? (
-                            <>
-                                <Nav className="mx-auto">
-                                    <button
-                                        className="btn btn-info text-black mx-auto mb-4 rounded-pill fw-bold"
-                                        onClick={logout}
-                                        href="/">
-                                        CERRAR SESIÓN
-                                    </button>
-                                </Nav>
-
-                            </>
-                        ) : (
-                            <>
-
-                            </>
-                        )}
-
 
                     </Navbar.Collapse>
                     <div className="d-lg-none mx-auto mt-0">

@@ -6,10 +6,8 @@ import './ModalLogin.css';
 import { ContextoUsuarios } from '../Context/UsuariosContext';
 
 
-
 const ModalLogin = ({ show, handleClose, handleShowRegistro }) => {
-
-  const { login } = useContext(ContextoUsuarios)
+  const { login, usuarios } = useContext(ContextoUsuarios)
   const [correo, setCorreo] = useState('')
   const [password, setPassword] = useState('')
   const [mostrarPassword, setMostrarPassword] = useState(false);
@@ -17,42 +15,24 @@ const ModalLogin = ({ show, handleClose, handleShowRegistro }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    login(correo, password)
+    const autenticado = await login(correo, password);
 
+    if (autenticado) {
+      // La autenticación fue exitosa, puedes redirigir al usuario o realizar otras acciones
+      alert("Usuario autenticado");
+    } else {
+      // La autenticación falló, muestra un mensaje de error
+      alert("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
+    }
   };
+
 
   const toggleMostrarPassword = () => {
     setMostrarPassword(!mostrarPassword);
   };
 
-  
-  // const { register, handleSubmit, formState: { errors }, watch, reset } = useForm();
-  // const { login, errorLogin } = useContext(ContextoUsuarios);
-
-  // const { usuarios } = useContext(ContextoUsuarios)
-
-  // const onSubmit = (evento) => {
-  //   evento.preventDefault()
-  //   try {
-  //     const usuario = usuarios.find(usuario => usuario.correo === correo && usuario.contrasena === contrasenia)
-  //     if (usuario) {
-  //       alert("usuario encontrado");
-  //       localStorage.setItem("usuario", JSON.stringify(usuario))
-  //       window.location.href = "/"; /*aqui colocamos la redireccion que se hara una vez que ingrese el usuario, hay que agregar en el path */
-  //     } else {
-  //       alert("usuario NO encontrado");
-  //     }
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-
-  // const onSubmit2 = handleSubmit((data) => {
-  //   login(data)
-  // })
 
   const abrirRegistro = () => {
-    /*reset() */
     handleClose();
     handleShowRegistro();
   }
@@ -116,74 +96,10 @@ const ModalLogin = ({ show, handleClose, handleShowRegistro }) => {
 
             </form>
 
-            {/* {errorLogin.map((error, i) => (
-              <div className='alert alert-danger p-2' key={i}> {error} </div>
-            ))} */}
-
-
-            {/* <form onSubmit={onSubmit2}>
-
-
-              <div className="mb-3 input-group">
-                <div className="input-group-text bg-info">
-                  <img src={imgUsuarioLogin} alt="" className="imagenInputFormulario" />
-                </div>
-                <input type="email" 
-                  className={`form-control ${errors.correo ? "is-invalid" : ""}`} 
-                  placeholder="Correo" name='correo' aria-describedby="correo" 
-                  {...register("correo", {
-                    required:{
-                      value: true,
-                      message: "El correo es requerido"
-                    },
-                    pattern:{
-                      value:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                      message:'El email proporcionado no es valido.'
-                    }
-                  })}
-                  
-                />
-                {
-                  errors.correo && (<p className="invalid-feedback text-red-500 my-1">{errors.correo.message}</p>)
-                }
-              </div>
-
-              <div className="mb-3 input-group">
-                <div className="input-group-text bg-info">
-                  <img src={imgContraseñaLogin} alt="" className="imagenInputFormulario" />
-                </div>
-                <input type="password" 
-                    className={`form-control ${errors.contrasena ? "is-invalid" : ""}`} 
-                    placeholder="Contraseña" name='contrasena' aria-describedby="contrasena"
-                    {...register("contrasena",{
-                      required:{
-                        value: true,
-                        message: "La contraseña es requerida"
-                      },
-                      minLength: {
-                        value: 8,
-                        message: "La contraseña debe tener 8 caracteres minimo"
-                      },
-                      maxLength:{
-                        value: 20,
-                        message: "La contraseña debe tener como maximo 20 caracteres"
-                      }
-                    })}
-                  
-                />
-                { 
-                  errors.contrasena && (<p className="invalid-feedback text-red-500 my-1">{errors.contrasena.message}</p>)
-                }
-              </div>
-
-              <div className='d-flex flex-column justify-content-center mt-2'>
-                <button type='submit' className='btn btn-info mb-2 text-white'>Iniciar Sesión</button>
-              </div>
-            </form> */}
           </Modal.Body>
           <div className='d-flex gap-1 justify-content-center'>
             <p>¿No tienes cuenta aun?</p>
-            <a href='#' className='text-decoration-none fw-bold' onClick={abrirRegistro}>Crear cuenta</a> {/*Logra cerrar el from, ver si puede abrir otro */}
+            <a href='#' className='text-decoration-none fw-bold' onClick={abrirRegistro}>Crear cuenta</a>
           </div>
         </div>
       </Modal>
