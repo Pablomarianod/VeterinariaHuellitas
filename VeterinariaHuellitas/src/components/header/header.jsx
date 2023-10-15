@@ -68,7 +68,7 @@ const Header = () => {
                             </NavDropdown>
 
                             <NavDropdown
-                                className="fw-bold text-center"
+                                className="fw-bold text-center mb-4"
                                 title="SERVICIOS"
                                 id="dropdown2"
                             >
@@ -111,6 +111,7 @@ const Header = () => {
                             ) : null}
                             
                         </Nav>
+     
                         <div className="mx-auto">
                             <div className=" d-none d-lg-block">
                                 <Navbar.Brand href="/">
@@ -123,6 +124,13 @@ const Header = () => {
                                 </Navbar.Brand>
                             </div>
                         </div>
+
+                        <Nav.Link
+                                className="fw-bold text-center mb-4"
+                                href="/misMascotas"
+                            >
+                                Mis Mascotas
+                            </Nav.Link>
 
 
                         <Nav className="mx-auto">

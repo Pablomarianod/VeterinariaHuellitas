@@ -14,10 +14,8 @@ const UsuariosContext = ({ children }) => {
         try {
             const response = await axios.get("http://localhost:8080/api/usuarios")
             setUsuarios(response.data);
-            console.log(response.data)
         } catch (error) {
             console.log(error)
-
         }
     };
 
@@ -88,8 +86,6 @@ const UsuariosContext = ({ children }) => {
             localStorage.setItem("usuario", JSON.stringify(usuario));
             setUsuarioLogueado(usuario);
 
-            console.log("Ingresado")
-
             if (usuario.rol === "admin") {
                 window.location.href = "/administracion";
             } else {
@@ -98,7 +94,6 @@ const UsuariosContext = ({ children }) => {
             return true;
         } catch (error) {
             console.error(error);
-            // alert("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
             return false;
         }
     };

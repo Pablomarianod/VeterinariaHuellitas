@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { ContextoMascotas } from "../context/MascotasContext";
+import { ContextoMascotas } from "../Context/MascotasContext";
 import Swal from "sweetalert2";
 import { Button } from "react-bootstrap";
 // import './modalmascotas.css' importar el formulario de registro

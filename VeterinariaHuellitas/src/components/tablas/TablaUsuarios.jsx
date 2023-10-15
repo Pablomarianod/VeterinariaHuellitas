@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { Button, Table, Modal } from "react-bootstrap";
-import { ContextoUsuarios } from "../context/UsuariosContext";
+import { ContextoUsuarios } from "../Context/UsuariosContext";
 import FormEditarUsuarios from "../turnos/FormEditarUsuarios";
 import Swal from "sweetalert2";
 import "./estiloTablas.css";
 
 const TablaUsuarios = () => {
-    const { usuarios, eliminarUsuarios } = useContext(ContextoUsuarios);
+    const { usuarios, eliminarUsuario } = useContext(ContextoUsuarios);
 
     const [edicionUsuario, setEdicionUsuario] = useState();
 
@@ -21,7 +21,7 @@ const TablaUsuarios = () => {
     };
 
     const handleDelete = (id) => {
-        eliminarUsuarios(id);
+        eliminarUsuario(id);
         Swal.fire({
             position: "center",
             icon: "success",
@@ -48,6 +48,7 @@ const TablaUsuarios = () => {
                                 <th>Apellido</th>
                                 <th>Correo</th>
                                 <th>Telefono</th>
+                                <th>Rol</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -59,6 +60,7 @@ const TablaUsuarios = () => {
                                     <td data-label="Apellido">{usuario.apellido} </td>
                                     <td data-label="Correo">{usuario.correo}</td>
                                     <td data-label="Telefono">{usuario.telefono}</td>
+                                    <td data-label="Rol">{usuario.rol}</td>
                                     <td>
                                         <Button
                                             className="botonEditarAdmin me-2"

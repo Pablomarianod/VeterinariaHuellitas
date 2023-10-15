@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
-import { ContextoUsuarios } from "../context/UsuariosContext";
+import { ContextoUsuarios } from "../Context/UsuariosContext";
 import Swal from "sweetalert2";
 import { Button } from "react-bootstrap";
-// import './modalusuarios.css' importar el formulario de registro
 
 const FormEditarUsuarios = ({ handleClose, edicionUsuario }) => {
     const [usuario, setUsuario] = useState(edicionUsuario);
-    const { modificarUsuarios } = useContext(ContextoUsuarios);
+    const { modificarUsuario } = useContext(ContextoUsuarios);
 
     const handleChange = (e) => {
         setUsuario({ ...usuario, [e.target.name]: e.target.value });
@@ -14,7 +13,7 @@ const FormEditarUsuarios = ({ handleClose, edicionUsuario }) => {
 
     const handleEdit = (e) => {
         e.preventDefault();
-        modificarUsuarios(usuario);
+        modificarUsuario(usuario);
         Swal.fire({
             title: "Usuario editado correctamente",
             icon: "success",
@@ -74,19 +73,19 @@ const FormEditarUsuarios = ({ handleClose, edicionUsuario }) => {
                     className="inputTelefono form-control mb-2"
                     required
                 ></input>
-                {/*
-                <label htmlFor="contraseña" className="labelContraseña form-label">
+                
+                <label htmlFor="rol" className="labelRol form-label">
                     Contraseña
                 </label>
                 <input
                     type="string"
-                    name="contraseña"
-                    value={usuario.contraseña}
+                    name="rol"
+                    value={usuario.rol}
                     onChange={handleChange}
-                    className="inputContraseña form-control mb-2"
+                    className="inputRol form-control mb-2"
                     required
                 ></input>
-                */}
+               
                 <Button type="submit" className="botonModalUsuarios">
                     EDITAR
                 </Button>

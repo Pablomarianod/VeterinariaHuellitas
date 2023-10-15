@@ -11,6 +11,8 @@ const ModalLogin = ({ show, handleClose, handleShowRegistro }) => {
   const [correo, setCorreo] = useState('')
   const [password, setPassword] = useState('')
   const [mostrarPassword, setMostrarPassword] = useState(false);
+  const [mostrarAlertaLogin, setMostrarAlertaLogin] = useState(false);
+  const [mostrarAlertaErrorLogin, setMostrarAlertaErrorLogin] = useState(false);
 
 
   const handleSubmit = async (e) => {
@@ -18,11 +20,12 @@ const ModalLogin = ({ show, handleClose, handleShowRegistro }) => {
     const autenticado = await login(correo, password);
 
     if (autenticado) {
-      // La autenticación fue exitosa, puedes redirigir al usuario o realizar otras acciones
-      alert("Usuario autenticado");
+
     } else {
-      // La autenticación falló, muestra un mensaje de error
-      alert("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
+      setMostrarAlertaErrorLogin(true);
+      setTimeout(() => {
+        setMostrarAlertaErrorLogin(false);
+      }, 3000);
     }
   };
 
@@ -95,6 +98,17 @@ const ModalLogin = ({ show, handleClose, handleShowRegistro }) => {
               </div>
 
             </form>
+            {mostrarAlertaLogin && (
+            <div className="alert alert-success" role="alert">
+              Bienvenido!
+            </div>
+          )}
+
+            {mostrarAlertaErrorLogin && (
+            <div className="alert alert-danger" role="alert">
+              Usuario y/o contraseña incorrecto.
+            </div>
+          )}
 
           </Modal.Body>
           <div className='d-flex gap-1 justify-content-center'>
