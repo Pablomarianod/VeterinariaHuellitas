@@ -30,7 +30,7 @@ const UsuariosContext = ({ children }) => {
             await axios.post("http://localhost:8080/api/usuario", usuario);
 
             setUsuarios([...usuarios, usuario])
-            console.log(usuario)
+            
         } catch (error) {
             console.log(error)
         }
@@ -40,7 +40,7 @@ const UsuariosContext = ({ children }) => {
 
     const modificarUsuario = async (usuario) => {
         try {
-            await axios.put(`http://localhost:8080/api/usuarios/${usuario._id}`, usuario);
+            await axios.put(`http://localhost:8080/api/usuario/${usuario._id}`, usuario);
             await obtenerUsuarios();
         } catch (error) {
             console.log(error)

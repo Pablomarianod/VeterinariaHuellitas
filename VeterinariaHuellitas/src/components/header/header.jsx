@@ -98,7 +98,7 @@ const Header = () => {
                             >
                                 TURNOS
                             </Nav.Link>
-                            
+
                             {usuario?.rol === "admin" ? (
                                 <>
                                     <Nav.Link
@@ -109,9 +109,9 @@ const Header = () => {
                                     </Nav.Link>
                                 </>
                             ) : null}
-                            
+
                         </Nav>
-     
+
                         <div className="mx-auto">
                             <div className=" d-none d-lg-block">
                                 <Navbar.Brand href="/">
@@ -125,12 +125,16 @@ const Header = () => {
                             </div>
                         </div>
 
-                        <Nav.Link
-                                className="fw-bold text-center mb-4"
-                                href="/misMascotas"
-                            >
-                                Mis Mascotas
-                            </Nav.Link>
+                        {usuario?.rol === 'usuario' ? (
+                            <>
+                                <Nav.Link
+                                    className="fw-bold text-center mb-4"
+                                    href="/misMascotas"
+                                >
+                                    Mis Mascotas
+                                </Nav.Link>
+                            </>
+                        ) : null}
 
 
                         <Nav className="mx-auto">
