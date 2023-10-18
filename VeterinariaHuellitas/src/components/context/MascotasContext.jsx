@@ -4,17 +4,14 @@ import axios from "axios";
 export const ContextoMascotas = createContext();
 
 const MascotasContext = ({ children }) => {
-const [mascotas, setMascotas] = useState([]);
+  const [mascotas, setMascotas] = useState([]);
 
-
-
-//GET
+  //GET
 
   const obtenerMascotas = async () => {
     try {
       const response = await axios.get("http://localhost:8080/api/mascotas");
       setMascotas(response.data);
-      // console.log(mascotas);
     } catch (error) {
       console.log(error);
     }
@@ -24,34 +21,46 @@ const [mascotas, setMascotas] = useState([]);
     obtenerMascotas();
   }, []);
 
-//PUT
+  //POST
 
-const editarMascotas = async (mascota)=>{
-  try {
-    await axios.put(`http://localhost:8080/api/mascotas/${mascota.id}`, mascota);
-    await obtenerMascotas();
-  } catch (error) {
-    console.log(error)
-    
-  }
+  const registrarMascota = async (mascota) => {
+    try {
+      await axios.post("http://localhost:8080/api/mascota", mascota);
 
-};
+      setMascotas([...mascotas, mascota])
 
-//DELETE
+    } catch (error) {
+      console.log(error)
+    }
+  };
 
-const eliminarMascotas = async (id) =>{
-  try {
-    await axios.delete(`http://localhost:8080/api/mascotas/${id}`);
-    const eliminarMascotas = mascotas.filter((mascota) => mascota.id !== id);
-    setMascotas(eliminarMascotas)
-  } catch (error) {
-    console.log(error)
-  }
-};
+  //PUT
+
+  const modificarMascota = async (mascota) => {
+    try {
+      await axios.put(`http://localhost:8080/api/mascota/${mascota.id}`, mascota);
+      await obtenerMascotas();
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  //DELETE
+
+  const eliminarMascota = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8080/api/mascota/${id}`);
+      const eliminarMascota = mascotas.filter((mascota) => mascota.id !== id);
+      setMascotas(eliminarMascota)
+      await obtenerMascotas();
+    } catch (error) {
+      console.log(error)
+    }
+  };
 
   return (
     <>
-      <ContextoMascotas.Provider value={{ obtenerMascotas, editarMascotas, eliminarMascotas, mascotas }}>
+      <ContextoMascotas.Provider value={{ obtenerMascotas, registrarMascota, modificarMascota, eliminarMascota, mascotas, setMascotas }}>
         {children}
       </ContextoMascotas.Provider>
     </>
