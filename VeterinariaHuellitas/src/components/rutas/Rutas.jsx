@@ -1,5 +1,4 @@
 import { Routes, Route, Navigate, resolvePath } from "react-router-dom";
-// import RegistroProductos from "../registroProductos/RegistroProductos";
 import PaginaPrincipal from "../../pages/paginaPrincipal/PaginaPrincipal";
 import Administracion from "../../pages/administracion/Administracion";
 import DetallePlanes from "../../pages/detallePlanes/DetallePlanes";
@@ -17,7 +16,6 @@ const Rutas = () => {
         <Routes>
             <Route path="/administracion" element={rolUsuario ? <Administracion /> : <Navigate to="/error404" />} />
             <Route exact path="/" element={<PaginaPrincipal />} />
-            {/* <Route path="/registroProductos" element={<RegistroProductos />}/> */}
             <Route path="/detallesDePlanes" element={<DetallePlanes />} />
             <Route path="/*" element={<Error404 />} />
             <Route path="/sobreNosotros" element={<Sobrenosotros />} />

@@ -1,6 +1,6 @@
 import "./productos.css";
 import { useContext } from "react";
-import { ProductosContexto } from "../context/ProductosContext";
+import { ProductosContexto } from "../Context/ProductosContext";
 import { Button, Card } from 'react-bootstrap';
 
 const Productos = () => {
