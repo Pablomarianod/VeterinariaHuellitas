@@ -38,7 +38,7 @@ const MascotasContext = ({ children }) => {
 
   const modificarMascota = async (mascota) => {
     try {
-      await axios.put(`http://localhost:8080/api/mascota/${mascota.id}`, mascota);
+      await axios.put(`http://localhost:8080/api/mascota/${mascota._id}`, mascota);
       await obtenerMascotas();
     } catch (error) {
       console.log(error)

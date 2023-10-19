@@ -1,64 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Card, Modal, Button, Form } from "react-bootstrap";
 import "./misMascotas.css";
 import defaultGatoImage from "../../images/defaultGato.jpeg";
 import defaultPerroImage from "../../images/defaultPerro.avif";
 import axios from 'axios'
 import FormularioMascotas from "../../components/formulario/FormularioMascotas";
+import { ContextoMascotas } from "../../components/Context/MascotasContext";
+import Swal from "sweetalert2";
 
 function MisMascotas() {
+  const { eliminarMascota } = useContext(ContextoMascotas);
   const [mascotas, setMascotas] = useState([]);
-  const [agregandoMascota, setAgregandoMascota] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
-  const [mascotaAEliminar, setMascotaAEliminar] = useState(null);
-  const [mostrarBotonAgregar, setMostrarBotonAgregar] = useState(true);
-
-
+  const [mostrarBotonAgregar] = useState(true);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const manejarAgregar = () => {
-    setAgregandoMascota(true);
-    setMostrarBotonAgregar(false);
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Esta acción eliminará la mascota.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await eliminarMascota(id);
+        await mostrarMascotas();
+        Swal.fire('Mascota eliminada', '', 'success');
+      }
+    });
   };
+  
 
-  const manejarEnviar = (datosMascota) => {
-    const id = mascotas.length + 1;
-    const nuevaMascota = {
-      id,
-      ...datosMascota,
-    };
-    setMascotas([...mascotas, nuevaMascota]);
-    setAgregandoMascota(false);
-    setMostrarBotonAgregar(true);
-  };
-
-  const manejarCancelar = () => {
-    setAgregandoMascota(false);
-    setMostrarBotonAgregar(true);
-  };
-
-  const mostrarModalEliminar = (id) => {
-    const mascotaEliminar = mascotas.find((mascota) => mascota.id === id);
-    setMascotaAEliminar(mascotaEliminar);
-    setShowModal(true);
-  };
-
-  const confirmarEliminar = () => {
-    if (mascotaAEliminar) {
-      const nuevasMascotas = mascotas.filter(
-        (mascota) => mascota.id !== mascotaAEliminar.id
-      );
-      setMascotas(nuevasMascotas);
-      setShowModal(false);
-    }
-  };
   const mostrarMascotas = async () => {
     try {
       const response = await axios.get('http://localhost:8080/api/mascotas');
-      // console.log(response.data)
       setMascotas(response.data)
     } catch (error) {
       console.log(error)
@@ -83,12 +63,12 @@ function MisMascotas() {
       <div className="d-flex flex-wrap justify-content-center">
         {mascotas.map((mascota) => (
 
-          <Card key={mascota.id} className="cardMascotas">
+          <Card key={mascota._id} className="cardMascotas">
             <div className="card-header">
               <Card.Title className="card-title-mascotas">{mascota.nombreMascota}</Card.Title>
               <button
                 className="btn btn-danger"
-                onClick={() => mostrarModalEliminar(mascota.id)}
+                onClick={() => handleDelete(mascota._id)}
               >
                 ELIMINAR
               </button>
@@ -121,8 +101,6 @@ function MisMascotas() {
 
         <Modal.Body><FormularioMascotas /></Modal.Body>
       </Modal>
-
-      {agregandoMascota && <FormularioMascota onSubmit={manejarEnviar} onCancel={manejarCancelar} />}
     </div>
   );
 }

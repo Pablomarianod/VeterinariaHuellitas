@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { Button, Table, Modal } from "react-bootstrap";
-import { ContextoTurnos } from "../context/TurnosContext";
+import { ContextoTurnos } from "../Context/TurnosContext";
 import FormEditarTurnos from "../turnos/FormEditarTurnos";
 import Swal from "sweetalert2";
 import "./estiloTablas.css";
 
 const TablaTurnos = () => {
-  const { turnos, eliminarTurnos } = useContext(ContextoTurnos);
+  const { turnos, eliminarTurno } = useContext(ContextoTurnos);
 
   const [edicionTurno, setEdicionTurno] = useState();
 
@@ -21,11 +21,20 @@ const TablaTurnos = () => {
   };
 
   const handleDelete = (id) => {
-    eliminarTurnos(id);
     Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Turno eliminado",
+      title: '¿Estás seguro?',
+      text: 'Esta acción eliminará el turno.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar',
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await eliminarTurno(id);
+        Swal.fire('Turno eliminado', '', 'success');
+      }
     });
   };
 
@@ -51,7 +60,7 @@ const TablaTurnos = () => {
             </thead>
             <tbody>
               {turnos.map((turno) => (
-                <tr className="columnaAdmin" key={turno.id}>
+                <tr className="columnaAdmin" key={turno._id}>
                   <td></td>
                   <td data-label="Fecha">{turno.fecha}</td>
                   <td data-label="hora">{turno.hora} </td>
@@ -65,7 +74,7 @@ const TablaTurnos = () => {
                     </Button>
                     <Button
                       className="botonEliminarAdmin"
-                      onClick={() => handleDelete(turno.id)}
+                      onClick={() => handleDelete(turno._id)}
                     >
                       Eliminar
                     </Button>

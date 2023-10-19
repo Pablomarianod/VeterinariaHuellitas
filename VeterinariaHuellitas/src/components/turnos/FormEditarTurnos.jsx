@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
-import { ContextoTurnos } from "../context/TurnosContext";
+import { ContextoTurnos } from "../Context/TurnosContext";
 import Swal from "sweetalert2";
 import { Button } from "react-bootstrap";
-import './modalTurnos.css'
+import "./FormEdit.css";
 
 const FormEditarTurnos = ({ handleClose, edicionTurno }) => {
   const [turno, setTurno] = useState(edicionTurno);
-  const { editarTurnos } = useContext(ContextoTurnos);
+  const { modificarTurno } = useContext(ContextoTurnos);
 
   const handleChange = (e) => {
     setTurno({ ...turno, [e.target.name]: e.target.value });
@@ -14,7 +14,7 @@ const FormEditarTurnos = ({ handleClose, edicionTurno }) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    editarTurnos(turno);
+    modificarTurno(turno);
     Swal.fire({
       title: "Turno editado correctamente",
       icon: "success",
@@ -64,8 +64,11 @@ const FormEditarTurnos = ({ handleClose, edicionTurno }) => {
           <option>Madurando</option>
           <option>Adultos</option>
         </select>
-        <Button type="submit" className="botonModalTurnos">
+        <Button type="submit" className="botonEditarForm">
           EDITAR
+        </Button>
+        <Button onClick={handleClose} className="botonEditarForm">
+          CANCELAR
         </Button>
       </form>
     </>

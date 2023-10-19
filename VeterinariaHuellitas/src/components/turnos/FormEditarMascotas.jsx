@@ -2,11 +2,11 @@ import { useContext, useState } from "react";
 import { ContextoMascotas } from "../Context/MascotasContext";
 import Swal from "sweetalert2";
 import { Button } from "react-bootstrap";
-// import './modalmascotas.css' importar el formulario de registro
+import "./FormEdit.css";
 
 const FormEditarMascotas = ({ handleClose, edicionMascota }) => {
     const [mascota, setMascota] = useState(edicionMascota);
-    const { editarMascotas } = useContext(ContextoMascotas);
+    const { modificarMascota } = useContext(ContextoMascotas);
 
     const handleChange = (e) => {
         setMascota({ ...mascota, [e.target.name]: e.target.value });
@@ -14,7 +14,7 @@ const FormEditarMascotas = ({ handleClose, edicionMascota }) => {
 
     const handleEdit = (e) => {
         e.preventDefault();
-        editarMascota(mascota);
+        modificarMascota(mascota);
         Swal.fire({
             title: "Mascota editada correctamente",
             icon: "success",
@@ -33,7 +33,7 @@ const FormEditarMascotas = ({ handleClose, edicionMascota }) => {
                 <input
                     type="string"
                     name="nombre"
-                    value={mascota.nombre}
+                    value={mascota.nombreMascota}
                     onChange={handleChange}
                     className="inputNombre form-control mb-2"
                     required
@@ -45,7 +45,7 @@ const FormEditarMascotas = ({ handleClose, edicionMascota }) => {
                 <input
                     type="string"
                     name="sexo"
-                    value={mascota.sexo}
+                    value={mascota.sexoMascota}
                     onChange={handleChange}
                     className="inputSexo form-control mb-2"
                     required
@@ -69,7 +69,7 @@ const FormEditarMascotas = ({ handleClose, edicionMascota }) => {
                 <input
                     type="string"
                     name="raza"
-                    value={mascota.telefono}
+                    value={mascota.raza}
                     onChange={handleChange}
                     className="inputRaza form-control mb-2"
                     required
@@ -92,8 +92,11 @@ const FormEditarMascotas = ({ handleClose, edicionMascota }) => {
                     <option>Roedor</option>
                 </select>
 
-                <Button type="submit" className="botonModalMascota">
+                <Button type="submit" className="botonEditarForm">
                     EDITAR
+                </Button>
+                <Button onClick={handleClose} className="botonEditarForm">
+                    CANCELAR
                 </Button>
             </form>
         </>

@@ -39,7 +39,7 @@ const TurnosContext = ({ children }) => {
 
   const modificarTurno = async (turno) => {
     try {
-      await axios.put(`http://localhost:8080/api/turno/${turno.id}`, turno);
+      await axios.put(`http://localhost:8080/api/turno/${turno._id}`, turno);
       await obtenerTurnos();
     } catch (error) {
       console.log(error)

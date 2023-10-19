@@ -21,13 +21,22 @@ const TablaUsuarios = () => {
     };
 
     const handleDelete = (id) => {
-        eliminarUsuario(id);
         Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Usuario eliminado",
+          title: '¿Estás seguro?',
+          text: 'Esta acción eliminará el usuario.',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, eliminar',
+          cancelButtonText: 'Cancelar',
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            await eliminarUsuario(id);
+            Swal.fire('Usuario eliminado', '', 'success');
+          }
         });
-    };
+      };
 
     return (
         <>

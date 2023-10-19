@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import "./estiloTablas.css";
 
 const TablaMascotas = () => {
-    const { mascotas, eliminarMascotas } = useContext(ContextoMascotas);
+    const { mascotas, eliminarMascota } = useContext(ContextoMascotas);
 
     const [edicionMascota, setEdicionMascota] = useState();
 
@@ -21,13 +21,22 @@ const TablaMascotas = () => {
     };
 
     const handleDelete = (id) => {
-        eliminarMascotas(id);
         Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Mascota eliminada",
+          title: '¿Estás seguro?',
+          text: 'Esta acción eliminará la mascota.',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Sí, eliminar',
+          cancelButtonText: 'Cancelar',
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            await eliminarMascota(id);
+            Swal.fire('Mascota eliminada', '', 'success');
+          }
         });
-    };
+      };
 
     return (
         <>
@@ -69,7 +78,7 @@ const TablaMascotas = () => {
                                         </Button>
                                         <Button
                                             className="botonEliminarAdmin"
-                                            onClick={() => handleDelete(mascota.id)}
+                                            onClick={() => handleDelete(mascota._id)}
                                         >
                                             Eliminar
                                         </Button>

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { ContextoUsuarios } from "../Context/UsuariosContext";
 import Swal from "sweetalert2";
 import { Button } from "react-bootstrap";
+import "./FormEdit.css";
 
 const FormEditarUsuarios = ({ handleClose, edicionUsuario }) => {
     const [usuario, setUsuario] = useState(edicionUsuario);
@@ -73,7 +74,7 @@ const FormEditarUsuarios = ({ handleClose, edicionUsuario }) => {
                     className="inputTelefono form-control mb-2"
                     required
                 ></input>
-                
+
                 <label htmlFor="rol" className="labelRol form-label">
                     Contraseña
                 </label>
@@ -85,9 +86,12 @@ const FormEditarUsuarios = ({ handleClose, edicionUsuario }) => {
                     className="inputRol form-control mb-2"
                     required
                 ></input>
-               
-                <Button type="submit" className="botonModalUsuarios">
+
+                <Button type="submit" className="botonEditarForm">
                     EDITAR
+                </Button>
+                <Button onClick={handleClose} className="botonEditarForm">
+                    CANCELAR
                 </Button>
             </form>
         </>
