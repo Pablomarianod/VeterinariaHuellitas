@@ -5,7 +5,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import { ContextoMascotas } from "../Context/MascotasContext";
 
-const FormularioMascotas = () => {
+const FormularioMascotas = ({handleClose}) => {
 
   const usuario = JSON.parse(localStorage.getItem("usuario"))
 
@@ -47,20 +47,14 @@ const FormularioMascotas = () => {
 
       registrarMascota(mascotas);
 
-      setMascotas({
-        nombreMascota: "",
-        especie: "",
-        raza: "",
-        sexoMascota: "",
-        edad: "",
-      });
-      setAceptoTerminos(false);
-
       Swal.fire({
         icon: "success",
         title: "Éxito!",
         text: "Mascota cargada correctamente.",
+        showConfirmButton: false,
+        timer: 2000
       });
+      handleClose()
     }
   };
 

@@ -98,7 +98,7 @@ function MisMascotas() {
 
       <Modal show={show} onHide={handleClose}>
 
-        <Modal.Body><FormularioMascotas /></Modal.Body>
+        <Modal.Body><FormularioMascotas handleClose={handleClose} /></Modal.Body>
       </Modal>
     </div>
   );
