@@ -6,19 +6,7 @@ export const ProductosContexto = createContext()
 const ProductosContext = ({ children }) => {
     const [productos, setProductos] = useState([])
 
-    //GET
 
-    const mostrarProductos = async () => {
-        try {
-            const response = await axios.get("http://localhost:8080/productos")
-            setProductos(response.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    useEffect(() => {
-        mostrarProductos()
-    }, [])
 
     //POST
 
@@ -58,7 +46,7 @@ const ProductosContext = ({ children }) => {
         }
     };
     return (
-        <ProductosContexto.Provider value={{ productos, setProductos, mostrarProductos, agregarProducto, modificarProducto, eliminarProducto }}>
+        <ProductosContexto.Provider value={{ productos, setProductos, agregarProducto, modificarProducto, eliminarProducto }}>
             {children}
         </ProductosContexto.Provider>
     )

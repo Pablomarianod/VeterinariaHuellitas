@@ -6,7 +6,6 @@ import Error404 from "../../pages/Error404/Error404";
 import Sobrenosotros from "../../pages/sobrenosotros/Sobrenosotros";
 import PaginaContacto from "../../pages/paginaContacto/PaginaContacto";
 import MisMascotas from "../../pages/MisMascotas/MisMascotas"
-import FormProductos from "../productos/FormProductos";
 
 const Rutas = () => {
 
@@ -22,7 +21,6 @@ const Rutas = () => {
             <Route path="/sobreNosotros" element={<Sobrenosotros />} />
             <Route path="/paginaContacto" element={<PaginaContacto />} />
             <Route path="/misMascotas" element={usuarioIn ? <MisMascotas /> : <Navigate to="/error404" />} />
-            <Route path="/addProducts" element={<FormProductos />} />
         </Routes>
     )
 }

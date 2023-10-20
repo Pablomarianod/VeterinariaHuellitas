@@ -1,35 +1,64 @@
 import "./productos.css";
-import { useContext } from "react";
-import { ProductosContexto } from "../Context/ProductosContext";
 import { Button, Card } from 'react-bootstrap';
 
 const Productos = () => {
-    const { productos } = useContext(ProductosContexto);
 
     return (
         <div className="product-container col-12">
             <h1>Productos Destacados</h1>
-            {productos === undefined ? (
-                <h1>Sin productos</h1>
-            ) : (
-                <div className="product-cards-container">
-                    {productos.map((producto) => (
-                        <Card key={producto.id} className="product-card">
-                            <Card.Img variant="top" src={producto.img} />
-                            <Card.Body>
-                                <Card.Title className="card-title">{producto.marca}</Card.Title>
-                                <Card.Text className="card-text">
-                                    Producto: {producto.tipo}
-                                    <br />
-                                    Precio: ${producto.precio}
-                                </Card.Text>
-                                <Button variant="primary">Comprar</Button>
-                            </Card.Body>
-                        </Card>
-                    ))}
-                </div>
-            )}
-            <Button variant="primary" href="/addProducts">Agregar Producto</Button>
+
+            <div className="product-cards-container">
+
+                <Card className="product-card">
+                    <Card.Img variant="top" src="/src/images/productos/alimentos.png"/>
+                    <Card.Body>
+                        <Card.Title className="card-title">Royal canin</Card.Title>
+                        <Card.Text className="card-text">
+                            Producto: Alimento
+                            <br />
+                            Precio: $ 30.000
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+
+                <Card className="product-card">
+                    <Card.Img variant="top" src="/src/images/productos/cuchaMascotas.jpg" />
+                    <Card.Body>
+                        <Card.Title className="card-title">K-9</Card.Title>
+                        <Card.Text className="card-text">
+                            Producto: Cucha Mascotas
+                            <br />
+                            Precio: $ 50.000
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+
+                <Card className="product-card">
+                    <Card.Img variant="top" src="/src/images/productos/fundaMascotas.jpg" />
+                    <Card.Body>
+                        <Card.Title className="card-title">K-9</Card.Title>
+                        <Card.Text className="card-text">
+                            Producto: Funda Mascotas
+                            <br />
+                            Precio: $ 15.000
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+
+                <Card className="product-card">
+                    <Card.Img variant="top" src="/src/images/productos/huesoKong.jpg" />
+                    <Card.Body>
+                        <Card.Title className="card-title">Kong</Card.Title>
+                        <Card.Text className="card-text">
+                            Producto: Juguete
+                            <br />
+                            Precio: $ 10.000
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+
+            </div>
+
         </div>
     );
 }
