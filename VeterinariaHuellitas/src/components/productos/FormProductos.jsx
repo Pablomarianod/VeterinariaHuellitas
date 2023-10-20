@@ -1,27 +1,35 @@
+import { useContext, useState } from "react";
+import { ProductosContexto } from "../Context/ProductosContext";
 
 
 const FormProductos = () => {
 
-    const { registrarUsuario } = useContext(ContextoUsuarios);
+    const { agregarProducto } = useContext(ProductosContexto);
 
     const [productos, setProductos] = useState({
-        nombre: "",
-        apellido: "",
-        telefono: "",
-        correo: "",
-        password: "",
-        passwordConfirm: "",
-        rol: "usuario"
-      });
+        marca: "",
+        tipo: "",
+        precio: "",
+        imagen: "",
+    });
 
-      const handleChange = (e) => {
+    const handleChange = (e) => {
         const { name, value } = e.target;
-        setMascotas({ ...mascotas, [name]: value });
-      };
+        setProductos({ ...productos, [name]: value });
+    };
 
-      const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-      };
+
+        agregarProducto(productos);
+
+        setProductos({
+            marca: "",
+            tipo: "",
+            precio: "",
+            imagen: "",
+        });
+    };
 
     return (
         <>
@@ -31,11 +39,11 @@ const FormProductos = () => {
                 <div className=''>
                     <label htmlFor='marca' className=''>Marca</label>
                     <input
-                        type='email'
+                        type='text'
                         className=''
                         name='marca'
-                        value={marca}
-                        onChange={(e) => setCorreo(e.target.value)}
+                        value={productos.marca}
+                        onChange={handleChange}
                         placeholder='Marca del producto.'
                         required
                     />
@@ -47,8 +55,8 @@ const FormProductos = () => {
                         type='text'
                         className=''
                         name='tipo'
-                        value={tipo}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={productos.tipo}
+                        onChange={handleChange}
                         placeholder='Tipo de producto.'
                         required
                     />
@@ -60,8 +68,8 @@ const FormProductos = () => {
                         type='number'
                         className=''
                         name='precio'
-                        value={precio}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={productos.precio}
+                        onChange={handleChange}
                         placeholder='Precio del producto.'
                         required
                     />
@@ -70,11 +78,11 @@ const FormProductos = () => {
                 <div className=''>
                     <label htmlFor='imagen' className=''>Imágen</label>
                     <input
-                        type='text'
+                        type='file'
                         className=''
                         name='imagen'
-                        value={imagen}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={productos.imagen}
+                        onChange={handleChange}
                         placeholder='Imágen del producto.'
                         required
                     />

@@ -22,21 +22,21 @@ const TablaMascotas = () => {
 
     const handleDelete = (id) => {
         Swal.fire({
-          title: '¿Estás seguro?',
-          text: 'Esta acción eliminará la mascota.',
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Sí, eliminar',
-          cancelButtonText: 'Cancelar',
+            title: '¿Estás seguro?',
+            text: 'Esta acción eliminará la mascota.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar',
         }).then(async (result) => {
-          if (result.isConfirmed) {
-            await eliminarMascota(id);
-            Swal.fire('Mascota eliminada', '', 'success');
-          }
+            if (result.isConfirmed) {
+                await eliminarMascota(id);
+                Swal.fire('Mascota eliminada', '', 'success');
+            }
         });
-      };
+    };
 
     return (
         <>
@@ -52,6 +52,8 @@ const TablaMascotas = () => {
                         <thead>
                             <tr className="filaAdmin">
                                 <th></th>
+                                <th>Dueño</th>
+                                <th>Correo</th>
                                 <th>Nombre</th>
                                 <th>Sexo</th>
                                 <th>Edad</th>
@@ -64,6 +66,8 @@ const TablaMascotas = () => {
                             {mascotas.map((mascota) => (
                                 <tr className="columnaAdmin" key={mascota._id}>
                                     <td></td>
+                                    <td data-label="Dueño">{mascota.nombreDueno}</td>
+                                    <td data-label="Correo">{mascota.correoDueno}</td>
                                     <td data-label="Nombre">{mascota.nombreMascota}</td>
                                     <td data-label="Sexo">{mascota.sexoMascota} </td>
                                     <td data-label="Edad">{mascota.edad}</td>

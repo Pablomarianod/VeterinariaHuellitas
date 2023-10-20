@@ -29,6 +29,7 @@ const Productos = () => {
                     ))}
                 </div>
             )}
+            <Button variant="primary" href="/addProducts">Agregar Producto</Button>
         </div>
     );
 }

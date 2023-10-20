@@ -38,8 +38,6 @@ const Header = () => {
                 <div className="container">
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-
-
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
                             <NavDropdown
@@ -92,12 +90,26 @@ const Header = () => {
                                 </NavDropdown.Item>
                             </NavDropdown>
 
-                            <Nav.Link
-                                className="fw-bold text-center"
-                                type='submit' onClick={modalTurnos}
-                            >
-                                TURNOS
-                            </Nav.Link>
+                            {usuario ? (
+                                <>
+                                    <Nav.Link
+                                        className="fw-bold text-center"
+                                        onClick={modalTurnos}
+                                    >
+                                        TURNOS
+                                    </Nav.Link>
+                                </>
+                            ) : (
+                                <>
+                                    <Nav.Link
+                                        className="fw-bold text-center"
+                                        onClick={handleShowLogin}
+                                    >
+                                        TURNOS
+                                    </Nav.Link>
+                                </>
+                            )}
+
 
                             {usuario?.rol === "admin" ? (
                                 <>

@@ -7,9 +7,13 @@ import { ContextoMascotas } from "../Context/MascotasContext";
 
 const FormularioMascotas = () => {
 
+  const usuario = JSON.parse(localStorage.getItem("usuario"))
+
   const { registrarMascota } = useContext(ContextoMascotas);
 
   const [mascotas, setMascotas] = useState({
+    nombreDueno: usuario.nombre,
+    correoDueno: usuario.correo,
     nombreMascota: "",
     especie: "",
     raza: "",
@@ -40,13 +44,9 @@ const FormularioMascotas = () => {
         text: "Por favor, Coloca una edad valida.",
       });
     } else {
-      
+
       registrarMascota(mascotas);
-      Swal.fire({
-        icon: "success",
-        title: "Éxito!",
-        text: "Los datos se enviaron correctamente.",
-      });
+
       setMascotas({
         nombreMascota: "",
         especie: "",
@@ -55,6 +55,12 @@ const FormularioMascotas = () => {
         edad: "",
       });
       setAceptoTerminos(false);
+
+      Swal.fire({
+        icon: "success",
+        title: "Éxito!",
+        text: "Mascota cargada correctamente.",
+      });
     }
   };
 

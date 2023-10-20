@@ -6,6 +6,8 @@ import { Modal } from "react-bootstrap";
 import ModalTurnos from "../turnos/ModalTurnos";
 import gatoLogin from "../../images/login/Gato-login.svg";
 import perroLoginn from "../../images/login//Perro-img-login.svg";
+import ModalLogin from '../../components/Login/ModalLogin';
+import ModalRegistro from '../../components/Registro/ModalRegistro';
 
 const Servicios = () => {
 
@@ -13,6 +15,16 @@ const Servicios = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [showLogin, setShowLogin] = useState();
+  const [showRegistro, setShowRegistro] = useState();
+  const handleCloseLogin = () => setShowLogin(false);
+  const handleShowLogin = () => setShowLogin(true);
+  const handleCloseRegistro = () => setShowRegistro(false);
+  const handleShowRegistro = () => setShowRegistro(true);
+
+
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
 
   const modalTurnos = () => {
     handleShow();
@@ -52,10 +64,30 @@ const Servicios = () => {
               <li>Banco de Sangre</li>
 
               <div className="boton">
-                <Button className="botonTurnos" size="lg" onClick={modalTurnos}>
-                  {" "}
-                  Turnos{" "}
-                </Button>
+
+                {usuario ? (
+                  <>
+                    <Button className="botonTurnos" size="lg" onClick={modalTurnos}>
+                      Turnos
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button
+                      className="botonTurnos" size="lg"
+                      onClick={handleShowLogin}
+                    >
+                      Turnos
+                    </Button>
+                  </>
+                )}
+                {
+                  showLogin && <ModalLogin show={showLogin} handleClose={handleCloseLogin} handleShowRegistro={handleShowRegistro}></ModalLogin>
+                }
+                {
+                  showRegistro && <ModalRegistro show={showRegistro} handleClose={handleCloseRegistro}></ModalRegistro>
+                }
+
               </div>
             </ul>
           </section>

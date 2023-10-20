@@ -52,6 +52,8 @@ const TablaTurnos = () => {
             <thead>
               <tr className="filaAdmin">
                 <th></th>
+                <th>Nombre</th>
+                <th>Correo</th>
                 <th>Fecha</th>
                 <th>Hora</th>
                 <th>Plan</th>
@@ -62,6 +64,8 @@ const TablaTurnos = () => {
               {turnos.map((turno) => (
                 <tr className="columnaAdmin" key={turno._id}>
                   <td></td>
+                  <td data-label="Nombre">{turno.nombre}</td>
+                  <td data-label="Correo">{turno.correo}</td>
                   <td data-label="Fecha">{turno.fecha}</td>
                   <td data-label="hora">{turno.hora} </td>
                   <td data-label="plan">{turno.plan}</td>

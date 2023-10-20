@@ -1,13 +1,15 @@
 import "./modalTurnos.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
-import emailjs from "@emailjs/browser";
 
 const ModalTurnos = ({ handleClose }) => {
-  const form = useRef();
+
+  const usuario = JSON.parse(localStorage.getItem("usuario"))
 
   const [formTurnos, setFormTurnos] = useState({
+    nombre: usuario.nombre,
+    correo: usuario.correo,
     fecha: "",
     hora: "",
     plan: ""
@@ -95,12 +97,10 @@ const ModalTurnos = ({ handleClose }) => {
   }
   
 
-
   const handleSubmit = async (e) => {
 
     e.preventDefault();
 
-    // if (validaFecha === "" && validaHora === "") {
     try {
       const response = await axios.post(
         "http://localhost:8080/api/turno",
@@ -112,7 +112,7 @@ const ModalTurnos = ({ handleClose }) => {
           hora: "",
           plan: planElegido
         });
-        // emailjs.sendForm('service_h1i7c1u', 'template_ysl5w5s', form.current, '3ISQGDxm28JZUQxZw')
+
         Swal.fire({
           icon: "success",
           title: "¡Listo!",
