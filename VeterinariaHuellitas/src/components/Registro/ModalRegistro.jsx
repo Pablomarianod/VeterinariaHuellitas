@@ -340,7 +340,6 @@ const ModalRegistro = ({ show, handleClose }) => {
             </div>
 
             <div className="mb-3">
-              {/* <label htmlFor="formGroupExampleInput" className="form-label">rol</label> */}
               <input type="hidden" className="form-control" value={usuarios.rol} onChange={handleChange} name="rol" placeholder="Ingresa tu rol" />
             </div>
 

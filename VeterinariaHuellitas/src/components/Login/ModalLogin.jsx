@@ -1,4 +1,4 @@
-import { Form, Modal } from 'react-bootstrap';
+import {  Modal } from 'react-bootstrap';
 import { useContext, useState } from 'react';
 import gatoLogin from '../../images/Gato-login.svg';
 import perroLoginn from '../../images/Perro-img-login.svg';
@@ -7,7 +7,7 @@ import { ContextoUsuarios } from '../Context/UsuariosContext';
 
 
 const ModalLogin = ({ show, handleClose, handleShowRegistro }) => {
-  const { login, usuarios } = useContext(ContextoUsuarios)
+  const { login } = useContext(ContextoUsuarios)
   const [correo, setCorreo] = useState('')
   const [password, setPassword] = useState('')
   const [mostrarPassword, setMostrarPassword] = useState(false);
@@ -106,7 +106,7 @@ const ModalLogin = ({ show, handleClose, handleShowRegistro }) => {
 
             {mostrarAlertaErrorLogin && (
             <div className="alert alert-danger" role="alert">
-              Usuario y/o contraseña incorrecto.
+              Correo y/o contraseña incorrecto.
             </div>
           )}
 

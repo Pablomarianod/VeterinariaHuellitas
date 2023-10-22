@@ -167,15 +167,7 @@ const ModalTurnos = ({ handleClose }) => {
         <label htmlFor="hora" className="labelHora form-label">
           Hora
         </label>
-        {/* <input
-          type="time"
-          name="hora"
-          value={formTurnos.hora.toString()}
-          onChange={handleChange}
-          onBlur={handleBlurHora}
-          className="inputHora form-control mb-2"
-          required
-        /> */}
+
         <select
           name="hora"
           value={formTurnos.hora.toString()}
