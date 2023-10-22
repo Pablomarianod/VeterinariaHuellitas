@@ -1,0 +1,49 @@
+.contenedorModalTurnos{
+  background-color: #48c2bb;
+  box-shadow: 5px 5px 5px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+
+.tituloModalTurnos {
+  color: white;
+}
+
+.alturaImagen{
+  height: 5rem;
+}
+
+.btn-close{
+  display: none;
+}
+
+.botonModalTurnos {
+  width: 100%;
+  background-color: #0b91de;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.botonModalTurnos:hover {
+
+  background-color: #0c64fa;
+}
+
+.campoInvalido {
+  color: #0c64fa;
+  font-size: small;
+  margin-bottom: 2px;
+  margin-top: -8px;
+  margin-left: 5px;
+}
+
+.inputFecha {
+  margin-right: -30px;
+}

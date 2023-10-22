@@ -1,0 +1,71 @@
+.containerFooter {
+  background-color: #f8f9f9;
+  width: 100%;
+  overflow-x: hidden;
+  
+}
+
+.estilo-titulo4 h4 {
+  font-style: italic;
+  margin-bottom: 5px;
+  color: #0b91de;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+.logoFooter {
+  margin-top: 50px;
+  width: 200px;
+}
+
+
+.iconoRedes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+
+}
+
+.iconoRedes .btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+
+}
+
+.iconoRedes .btn img {
+  width: 30px;
+  height: 30px;
+
+}
+
+.iconoRedes .btn:hover {
+  transform: scale(1.1);
+  filter: brightness(0.8);
+}
+
+.estilo-link,
+.estilo-link * {
+  color: #0b91de;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.estilo-link:hover,
+.estilo-link:hover * {
+  color: #005eff;
+}
+
+@media (max-width: 640px) {
+  .containerFooter {
+    padding: 0;
+  }
+  .col-md-4.text-center {
+    margin-top: 20px;
+  }
+}

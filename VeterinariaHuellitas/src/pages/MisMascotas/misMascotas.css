@@ -1,0 +1,38 @@
+.colorYestilo-verde {
+    color: #6eb42d;
+    font-style: italic;
+    text-align: center;
+}
+
+.containerMascotas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.subtituloMascotas {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cardMascotas {
+    width: 18rem;
+    margin: 10px;
+}
+
+
+.card-title-mascotas {
+    font-size: 1.5rem;
+}
+
+.card-text-mascotas {
+    font-weight: bold;
+}
+
+.species {
+    font-style: italic;
+}

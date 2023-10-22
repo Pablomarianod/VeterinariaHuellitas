@@ -1,0 +1,52 @@
+.tituloError{
+  font-size: 64px;
+  font-family: 'Arial', sans-serif;
+  color: #001effba;
+  text-shadow: 0 0 10px rgba(0, 145, 255, 0.8), 0 0 20px rgb(0, 145, 255), 0 0 30px rgb(98, 0, 255);
+  animation: glow 1s ease-in-out infinite alternate;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@keyframes glow {
+  from {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgb(0, 145, 255), 0 0 30px rgb(98, 0, 255);
+  }
+  to {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgb(0, 145, 255), 0 0 30px rgb(98, 0, 255);
+  }
+}
+
+.main-imgError{
+  padding-top: 30% ;
+  width: 100%;
+}
+
+
+.main-descriptionError {
+  font-size: 22px;
+  color: #555;
+  font-weight: bold;
+}
+
+
+.btn-sz-primary {
+  font-size: 18px;
+  padding: 10px 30px;
+  border-radius: 25px;
+  color: #fff;
+  background-color: #34d796;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-sz-primary:hover {
+  background-color: #2ca981;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .tituloError {
+    font-size: 32px;
+  }
+}

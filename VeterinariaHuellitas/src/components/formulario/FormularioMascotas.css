@@ -1,0 +1,56 @@
+.atencion-container {
+  background-color: #0c64fa;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 32px;
+  font-weight: bold;
+  width: 100%;
+}
+
+
+.custom-border {
+  border: 2px solid #007bff;
+}
+
+.custom-form {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.custom-title {
+  color: #007bff;
+}
+
+/* Campos del formulario */
+.form-group label {
+  font-weight: bold;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Button */
+.BotonModalregistro {
+  background-color: #08deba;
+  color: black;
+  border-color: #007bff;
+  padding: 10px 20px;
+}
+
+.BotonModalregistro:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.formulario {
+  background-color: #0B91DE;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}

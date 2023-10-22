@@ -1,0 +1,111 @@
+.containerDescripcion {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  border-radius: 0.5em;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  margin: 0 auto;
+
+}
+.containerSeparacion{
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.fotoCircle {
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+
+.tituloAbout {
+  font-size: 40px;
+}
+
+.textjust {
+  text-align: justify;
+  line-height: 2em;
+}
+
+.cambiocolor p {
+  display: none;
+}
+
+.cambiocolor:hover {
+  transition: all 500ms ease-out;
+  transform: translatey(-1%);
+
+}
+
+.cambiocolor:hover p {
+  display: block;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.cardIntegrante {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  border-radius: 0.5em;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.cardIntegrante:hover {
+  background: #0B91DE;
+  transform: translateY(-1%);
+}
+
+.cardIntegrante h3 {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.cardIntegrante p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #555;
+}
+
+.cambiocolor i {
+  font-size: 28px;
+}
+
+.botonIcono {
+  font-size: 28px;
+  transition: color 0.3s;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.botonIcono:hover {
+  color: #0b91de;
+  background-color: white;
+}
+
+.botonIcono i {
+  font-size: 28px;
+  color: white;
+}

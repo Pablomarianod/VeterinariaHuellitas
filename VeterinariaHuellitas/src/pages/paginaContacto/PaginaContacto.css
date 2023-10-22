@@ -1,0 +1,31 @@
+.contact-form {
+    background-color: #f8f9fa;
+    border: 1px solid #d1d1d1;
+    padding: 20px;
+  }
+  
+  .intro-text {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .formularioContacto {
+    background-color: #0B91DE;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .contact-container {
+    background-color: #08deba; 
+    height: 100px;
+    
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .contact-icon {
+    font-size: 30px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+  }
