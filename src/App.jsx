@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Rutas from './components/rutas/Rutas';
-// import ContextoTurnos from './components/Context/TurnosContext.jsx';
-// import ContextoUsuarios from './components/Context/UsuariosContext.jsx';
-// import MascotasContext from './components/Context/MascotasContext.jsx';
+import ContextoTurnos from './components/Context/TurnosContext.jsx';
+import ContextoUsuarios from './components/Context/UsuariosContext.jsx';
+import MascotasContext from './components/Context/MascotasContext.jsx';
 import PieDePagina from './components/piedepagina/piedepagina';
 import Header from './components/header/header';
 
@@ -15,17 +15,17 @@ const App = () => {
 
 
 
-      {/* <ContextoUsuarios>
+      <ContextoUsuarios>
         <MascotasContext>
-          <ContextoTurnos> */}
+          <ContextoTurnos>
               
               <Header />
               <Rutas />
               <PieDePagina />
               
-          {/* </ContextoTurnos>
+          </ContextoTurnos>
         </MascotasContext>
-      </ContextoUsuarios> */}
+      </ContextoUsuarios>
 
 
     </>
