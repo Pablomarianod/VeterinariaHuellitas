@@ -5,7 +5,7 @@ const Carrusel = () => {
         <>
             <Carousel>
                 <Carousel.Item>
-                    <Image className="imagenCarousel" src="public/images/carrusel/imagen9.jpg" />
+                    <Image className="imagenCarousel" src="images/carrusel/imagen9.jpg" />
                     <Carousel.Caption>
 
                     </Carousel.Caption>
