@@ -13,7 +13,6 @@ const App = () => {
   return (
     <>
 
-<h1>Probando</h1>
 
       <ContextoUsuarios>
         <MascotasContext>
