@@ -12,7 +12,7 @@ const UsuariosContext = ({ children }) => {
 
     const obtenerUsuarios = async () => {
         try {
-            const response = await axios.get("http://localhost:8080/api/usuarios")
+            const response = await axios.get("https://huellitas-backend.vercel.app/api/usuarios")
             setUsuarios(response.data);
         } catch (error) {
             console.log(error)
@@ -27,7 +27,7 @@ const UsuariosContext = ({ children }) => {
 
     const registrarUsuario = async (usuario) => {
         try {
-            await axios.post("http://localhost:8080/api/usuario", usuario);
+            await axios.post("https://huellitas-backend.vercel.app/api/usuario", usuario);
 
             setUsuarios([...usuarios, usuario])
             
@@ -40,7 +40,7 @@ const UsuariosContext = ({ children }) => {
 
     const modificarUsuario = async (usuario) => {
         try {
-            await axios.put(`http://localhost:8080/api/usuario/${usuario._id}`, usuario);
+            await axios.put(`https://huellitas-backend.vercel.app/api/usuario/${usuario._id}`, usuario);
             await obtenerUsuarios();
         } catch (error) {
             console.log(error)
@@ -52,7 +52,7 @@ const UsuariosContext = ({ children }) => {
     const eliminarUsuario = async (id) => {
 
         try {
-            await axios.delete(`http://localhost:8080/api/usuario/${id}`);
+            await axios.delete(`https://huellitas-backend.vercel.app/api/usuario/${id}`);
             const eliminarUsuario = usuarios.filter((usuario) => usuario.id !== id);
             setUsuarios(eliminarUsuario);
             await obtenerUsuarios();
@@ -65,7 +65,7 @@ const UsuariosContext = ({ children }) => {
 
     const login = async (correo, password) => {
         try {
-            const response = await axios.post("http://localhost:8080/api/login", {
+            const response = await axios.post("https://huellitas-backend.vercel.app/api/login", {
                 correo,
                 password,
             });

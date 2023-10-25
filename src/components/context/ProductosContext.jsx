@@ -12,7 +12,7 @@ const ProductosContext = ({ children }) => {
 
     const agregarProducto = async (producto) => {
         try {
-            await axios.post("http://localhost:8080/api/producto", producto);
+            await axios.post("https://huellitas-backend.vercel.app/api/producto", producto);
 
             setProductos([...productos, producto])
 
@@ -25,7 +25,7 @@ const ProductosContext = ({ children }) => {
 
     const modificarProducto = async (producto) => {
         try {
-            await axios.put(`http://localhost:8080/api/producto/${producto._id}`, producto);
+            await axios.put(`https://huellitas-backend.vercel.app/api/producto/${producto._id}`, producto);
             await mostrarProductos();
         } catch (error) {
             console.log(error)
@@ -37,7 +37,7 @@ const ProductosContext = ({ children }) => {
     const eliminarProducto = async (id) => {
 
         try {
-            await axios.delete(`http://localhost:8080/api/producto/${id}`);
+            await axios.delete(`https://huellitas-backend.vercel.app/api/producto/${id}`);
             const eliminarProducto = productos.filter((producto) => producto.id !== id);
             setProductos(eliminarProducto);
             await obtenerProductos();

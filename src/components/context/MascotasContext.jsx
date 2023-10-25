@@ -10,7 +10,7 @@ const MascotasContext = ({ children }) => {
 
   const obtenerMascotas = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/mascotas");
+      const response = await axios.get("https://huellitas-backend.vercel.app/api/mascotas");
       setMascotas(response.data);
     } catch (error) {
       console.log(error);
@@ -25,7 +25,7 @@ const MascotasContext = ({ children }) => {
 
   const registrarMascota = async (mascota) => {
     try {
-      await axios.post("http://localhost:8080/api/mascota", mascota);
+      await axios.post("https://huellitas-backend.vercel.app/api/mascota", mascota);
 
       setMascotas([...mascotas, mascota])
 
@@ -38,7 +38,7 @@ const MascotasContext = ({ children }) => {
 
   const modificarMascota = async (mascota) => {
     try {
-      await axios.put(`http://localhost:8080/api/mascota/${mascota._id}`, mascota);
+      await axios.put(`https://huellitas-backend.vercel.app/api/mascota/${mascota._id}`, mascota);
       await obtenerMascotas();
     } catch (error) {
       console.log(error)
@@ -49,7 +49,7 @@ const MascotasContext = ({ children }) => {
 
   const eliminarMascota = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/mascota/${id}`);
+      await axios.delete(`https://huellitas-backend.vercel.app/api/mascota/${id}`);
       const eliminarMascota = mascotas.filter((mascota) => mascota.id !== id);
       setMascotas(eliminarMascota)
       await obtenerMascotas();

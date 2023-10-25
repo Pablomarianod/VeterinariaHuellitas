@@ -10,7 +10,7 @@ const TurnosContext = ({ children }) => {
 
   const obtenerTurnos = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/turnos");
+      const response = await axios.get("https://huellitas-backend.vercel.app/api/turnos");
       setTurnos(response.data);
     } catch (error) {
       console.log(error);
@@ -26,7 +26,7 @@ const TurnosContext = ({ children }) => {
 
   const registrarTurno = async (turno) => {
     try {
-      await axios.post("http://localhost:8080/api/turno", turno);
+      await axios.post("https://huellitas-backend.vercel.app/api/turno", turno);
 
       setTurnos([...turnos, turno])
 
@@ -39,7 +39,7 @@ const TurnosContext = ({ children }) => {
 
   const modificarTurno = async (turno) => {
     try {
-      await axios.put(`http://localhost:8080/api/turno/${turno._id}`, turno);
+      await axios.put(`https://huellitas-backend.vercel.app/api/turno/${turno._id}`, turno);
       await obtenerTurnos();
     } catch (error) {
       console.log(error)
@@ -51,7 +51,7 @@ const TurnosContext = ({ children }) => {
 
   const eliminarTurno = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/turno/${id}`);
+      await axios.delete(`https://huellitas-backend.vercel.app/api/turno/${id}`);
       const eliminarTurno = turnos.filter((turno) => turno.id !== id);
       setTurnos(eliminarTurno)
       await obtenerTurnos();

@@ -103,7 +103,7 @@ const ModalTurnos = ({ handleClose }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/turno",
+        "https://huellitas-backend.vercel.app//api/turno",
         { ...formTurnos, plan: planElegido }
       );
       if (response.status === 201) {
