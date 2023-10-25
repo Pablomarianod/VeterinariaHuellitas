@@ -14,7 +14,7 @@ function Error404() {
             </h1>
             <div className="main-imgError text-center pt-5 colorFondoError">
               <img
-                src="/src/images/Error404/Superperro.png"
+                src="images/Error404/Superperro.png"
                 alt="perro"
                 className="img-fluid"
               />

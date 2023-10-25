@@ -41,7 +41,7 @@ function About() {
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
-              src="/src/images/integrantes/pablo.jpg"
+              src="images/integrantes/pablo.jpg"
               alt="Pablo"
               className="fotoCircle mt-4"
             />
@@ -68,7 +68,7 @@ function About() {
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
-              src="/src/images/integrantes/daniell.jpg"
+              src="/images/integrantes/daniell.jpg"
               alt="Daniel"
               className="fotoCircle  mt-4"
             />
@@ -95,7 +95,7 @@ function About() {
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
-              src="/src/images/integrantes/Estebanp.jpg"
+              src="images/integrantes/Estebanp.jpg"
               alt="Esteban"
               className="fotoCircle mt-4"
             />
@@ -127,7 +127,7 @@ function About() {
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
-              src="/src/images/integrantes/santiago.jpg"
+              src="images/integrantes/santiago.jpg"
               alt="Santiago"
               className="fotoCircle mt-4"
             />
@@ -154,7 +154,7 @@ function About() {
             style={{ width: "20rem", height: "23rem" }}
           >
             <img
-              src="/src/images/integrantes/alberto.png"
+              src="images/integrantes/alberto.png"
               alt="Alberto"
               className="fotoCircle mt-4"
             />

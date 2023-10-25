@@ -35,7 +35,7 @@ const Servicios = () => {
     <>
       <div className="containerServicios">
         <div className="informacionSimple">
-          <img src="src/images/logo/Logo.jpg" alt="Logo de la Clínica" />
+          <img src="images/logo/Logo.jpg" alt="Logo de la Clínica" />
           <h1>Clínica Veterinaria</h1>
           <h3>Consultas: Lunes-Viernes: 8:30 a 20:30</h3>
           <h3>Gral. Paz 576, T4000 San Miguel de Tucumán, Tucumán</h3>

@@ -10,7 +10,7 @@ function Profesionales() {
 
       <CardGroup>
         <Card className='mx-2 mb-4 text-center custom-card'>
-          <Card.Img variant="top" src="src/images/profesionales/MedicaGeneralista.jpg" />
+          <Card.Img variant="top" src="images/profesionales/MedicaGeneralista.jpg" />
           <Card.Body className="d-flex flex-column align-items-center">
             <Card.Title>Medicina General</Card.Title>
             <Card.Text>
@@ -21,7 +21,7 @@ function Profesionales() {
         </Card>
 
         <Card className='mx-2 mb-4 text-center custom-card'>
-          <Card.Img variant="top" src="src/images/profesionales/MedicoTraumatologo.png" />
+          <Card.Img variant="top" src="images/profesionales/MedicoTraumatologo.png" />
           <Card.Body className="d-flex flex-column align-items-center">
             <Card.Title>Traumatología</Card.Title>
             <Card.Text>
@@ -32,7 +32,7 @@ function Profesionales() {
         </Card>
 
         <Card className='mx-2 mb-4 text-center custom-card'>
-          <Card.Img variant="top" src="src/images/profesionales/MedicaCardiologa.jpeg" />
+          <Card.Img variant="top" src="images/profesionales/MedicaCardiologa.jpeg" />
           <Card.Body className="d-flex flex-column align-items-center">
             <Card.Title>Cardiología </Card.Title>
             <Card.Text>

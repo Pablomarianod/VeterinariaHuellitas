@@ -11,13 +11,13 @@ const Carrusel = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <Image className="imagenCarousel" src="public/images/carrusel/imagen1.png" />
+                    <Image className="imagenCarousel" src="images/carrusel/imagen1.png" />
                     <Carousel.Caption>
 
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <Image className="imagenCarousel" src="public/images/carrusel/imagen7.jpg" />
+                    <Image className="imagenCarousel" src="images/carrusel/imagen7.jpg" />
                     <Carousel.Caption>
 
                     </Carousel.Caption>

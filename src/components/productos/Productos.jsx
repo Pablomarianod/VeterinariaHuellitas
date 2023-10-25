@@ -10,7 +10,7 @@ const Productos = () => {
             <div className="product-cards-container">
 
                 <Card className="product-card">
-                    <Card.Img variant="top" src="/src/images/productos/alimentos.png"/>
+                    <Card.Img variant="top" src="images/productos/alimentos.png"/>
                     <Card.Body>
                         <Card.Title className="card-title">Royal canin</Card.Title>
                         <Card.Text className="card-text">
@@ -22,7 +22,7 @@ const Productos = () => {
                 </Card>
 
                 <Card className="product-card">
-                    <Card.Img variant="top" src="/src/images/productos/cuchaMascotas.jpg" />
+                    <Card.Img variant="top" src="images/productos/cuchaMascotas.jpg" />
                     <Card.Body>
                         <Card.Title className="card-title">K-9</Card.Title>
                         <Card.Text className="card-text">
@@ -34,7 +34,7 @@ const Productos = () => {
                 </Card>
 
                 <Card className="product-card">
-                    <Card.Img variant="top" src="/src/images/productos/fundaMascotas.jpg" />
+                    <Card.Img variant="top" src="images/productos/fundaMascotas.jpg" />
                     <Card.Body>
                         <Card.Title className="card-title">K-9</Card.Title>
                         <Card.Text className="card-text">
@@ -46,7 +46,7 @@ const Productos = () => {
                 </Card>
 
                 <Card className="product-card">
-                    <Card.Img variant="top" src="/src/images/productos/huesoKong.jpg" />
+                    <Card.Img variant="top" src="images/productos/huesoKong.jpg" />
                     <Card.Body>
                         <Card.Title className="card-title">Kong</Card.Title>
                         <Card.Text className="card-text">
