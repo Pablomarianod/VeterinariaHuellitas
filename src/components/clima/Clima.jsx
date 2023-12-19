@@ -19,7 +19,6 @@ const Clima = () => {
           },
         }
       );
-      console.log(response.data.current);
       setDatosClima(response.data.current);
       setInfoClima(response.data.current.condition);
     } catch (error) {
