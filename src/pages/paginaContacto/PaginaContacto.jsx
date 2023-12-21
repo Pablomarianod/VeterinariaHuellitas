@@ -15,11 +15,25 @@ function formularioContacto() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+  
+    if (name === "nombreApellido") {
+
+      const formattedValue = value.replace(/[^A-Za-z\s']/g, '');
+  
+      setFormData({
+        ...formData,
+        [name]: formattedValue,
+      });
+    } else if (name === "telefono" && !/^\d*$/.test(value)) {
+      return;
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
+  
 
   const [aceptoTerminos, setAceptoTerminos] = useState(false);
 
@@ -27,8 +41,9 @@ function formularioContacto() {
     event.preventDefault();
     if (
       formData.nombreApellido.trim() === "" ||
+      !formData.nombreApellido.match(/^[A-Za-zÁÉÍÓÚáéíóúüÜñÑ\s']+$/) ||
       !formData.email.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/) ||
-      !formData.telefono.match(/^\d{10}$/) ||
+      !formData.telefono.match(/^\d{1,12}$/) ||
       formData.mensaje.trim() === ""
     ) {
       Swal.fire({
@@ -42,7 +57,7 @@ function formularioContacto() {
         title: "Éxito",
         text: "Los datos se enviaron correctamente.",
       });
-      console.log("Datos del formulario:", formData);
+
       setFormData({
         nombreApellido: "",
         email: "",
@@ -75,6 +90,9 @@ function formularioContacto() {
                   name="nombreApellido"
                   value={formData.nombreApellido}
                   onChange={handleInputChange}
+                  minLength={2}
+                  maxLength={30}
+                  pattern="^[A-Za-zÁÉÍÓÚáéíóúüÜñÑ\s']+$"
                   required
                 />
               </Form.Group>
@@ -85,16 +103,21 @@ function formularioContacto() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
+                  minLength={7}
+                  maxLength={80}
                   required
                 />
               </Form.Group>
               <Form.Group controlId="telefono">
                 <Form.Label>Teléfono</Form.Label>
                 <Form.Control
-                  type="number"
+                  type="tel"
                   name="telefono"
                   value={formData.telefono}
                   onChange={handleInputChange}
+                  inputMode="numeric"
+                  minLength={10}
+                  maxLength={12}
                   required
                 />
               </Form.Group>
@@ -106,6 +129,7 @@ function formularioContacto() {
                   name="mensaje"
                   value={formData.mensaje}
                   onChange={handleInputChange}
+                  maxLength={240}
                   required
                 />
               </Form.Group>
